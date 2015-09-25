@@ -1,45 +1,39 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Laravel</title>
-
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
-
-        <style>
-            html, body {
-                height: 100%;
-            }
-
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                display: table;
-                font-weight: 100;
-                font-family: 'Lato';
-            }
-
-            .container {
-                text-align: center;
-                display: table-cell;
-                vertical-align: middle;
-            }
-
-            .content {
-                text-align: center;
-                display: inline-block;
-            }
-
-            .title {
-                font-size: 96px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="content">
-                <div class="title">Laravel 5</div>
-            </div>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>SICNA.de - Attraktive Folienlösungen (Beschriftung, Lackschutz, Sonnenschutz & Wrapping)</title>
+</head>
+<body>
+    
+    <nav class="navbar">
+        
+        <div class="navbar__brand">
+            <img src="/images/brand-logo." alt="SICNA.de Logo">
         </div>
-    </body>
+        
+        <div class="navbar__nav-primary">
+            <ul class="navbar__nav-primary__menue">
+                <li><a href="#dienstleistungen">Dienstleistungen</a></li> 
+                <li><a href="#ueberuns">Über uns</a></li> 
+                <li><a href="#kontakt">Kontakt uns</a></li> 
+            </ul>
+        </div>
+
+        <div class="navbar__nav-secondary">
+            <ul class="navbar__nav-secondary__menue">
+                <li><a href="#kundenformulare">
+                    {{-- TODO: Eigene Componente: Runder Icon Button --}}
+                    Kundenformulare
+                </a></li>
+            </ul>
+        </div>
+
+
+        
+
+
+    </nav>
+
+</body>
 </html>
