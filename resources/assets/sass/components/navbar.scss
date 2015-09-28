@@ -1,0 +1,142 @@
+/**
+ *
+ * navbar-component
+ *
+ */
+
+// variables
+$navbarHeight: 70px;
+$navSecondaryMenueHeight: $navbarHeight - 20px;
+
+// component
+@include component(navbar) {
+
+    position: relative;
+    margin: 0;
+    height: $navbarHeight;
+    width: 100%;
+
+    border-radius: 0;
+    border: 0;
+    
+    @include part(brand) {
+        display: block;
+        position: absolute;
+        top: 0; left: 0;
+
+        height: $navbarHeight;
+        padding: 18px ($navbarHeight/2 + 10px)  18px 20px;  
+        
+        background-color: $clPaper;
+        border-bottom-right-radius: $navbarHeight;
+    }
+
+    @include part(nav-primary) {
+        @include container();
+
+        @include part(menue) {
+            @include span(12);
+            padding-top: 15px;
+            list-style-type: none;
+            
+            li { 
+                position: relative; 
+                float: left; 
+                &:hover .navbar__nav-primary__menue__submenue {
+                        display: block;
+                }
+            }
+
+            a {
+                display: block;
+                position: relative;
+                margin-right: 5px;
+                padding: 12px 15px;
+                @include text("bold");    
+                color: $clTextNegative;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+
+                &:hover {
+                    color: $clText;
+                    text-decoration: none;
+                }
+            }
+
+            @include part(submenue) {
+                display: none;
+                position: absolute;
+                left: 0;
+                width: 200px;
+
+                margin-left: 12px;
+                padding: 15px;
+                
+                list-style-type: none;
+                background-color: $clPaper;
+
+                border-radius: 5px;
+                overflow: hidden;
+
+                li { 
+                    display: block;
+                    clear: both; 
+                    border-bottom: 1px solid $clNeutral;
+                    width: 100%;
+
+                    &:last-child { border-bottom: none; }
+                }
+                a {
+                    display: inline-block;
+                    padding: 9px 10px;
+                    width: 100%;
+                    
+                    @include text("bold");
+                    color: $clSecondary;
+                    letter-spacing: 0px;
+                    text-transform: none;
+
+                    &:hover { color: $clPrimary; }
+                    .fa { margin-right: 6px; }
+                }
+            }
+        }
+    }
+
+    @include part(nav-secondary) {
+        position: absolute;
+        top: 0; right: 0;
+        
+        height: $navbarHeight;
+        
+        @include part(menue) {
+            list-style-type: none;
+            padding: 10px;
+
+            li { float: left; }
+
+            a {
+                display: block;
+                height: $navSecondaryMenueHeight;
+                width: $navSecondaryMenueHeight;
+                
+                color: $clPaper;
+                border: 2px solid $clPaper;
+                border-radius: $navSecondaryMenueHeight;
+
+                i {
+                    padding: ($navSecondaryMenueHeight/4 - 3px) $navSecondaryMenueHeight/4;
+                    font-size: $navSecondaryMenueHeight/2;
+                }
+
+                &:hover {
+                    color: $clPrimary;
+                    background-color: $clPaper;
+                }
+            }
+        }
+
+    }
+
+
+}

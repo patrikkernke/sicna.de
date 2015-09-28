@@ -1,2 +1,17 @@
-// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "node_modules/susy/sass/susy";
+@import "node_modules/csstyle/csstyle";
+@import "node_modules/font-awesome/css/font-awesome";
+
+// Settings & Globals
+@import "settings/susy";
+@import "settings/globals";
+@import "vars/colors";
+@import "typography/font";
+
+// only for dev purposes
+body { background-color: $clSecondary; }
+
+// components
+@import "components/navbar";
 

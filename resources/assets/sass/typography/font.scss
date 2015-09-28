@@ -1,0 +1,23 @@
+/**
+ *
+ * Font embedding & global Mixins
+ *
+ */
+
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+$fontFamily: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+@mixin text($weight:"normal") {
+    color: $clText;
+    font-family: $fontFamily;
+    font-size: 14px;
+    line-height: 125%;
+    font-weight: 400;
+    @if ($weight == "bold") {
+        font-weight: 700    ;
+    }
+    text-transform: normal;
+    font-smoothing:antialiased;
+}
