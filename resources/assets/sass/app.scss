@@ -4,10 +4,10 @@
 @import "node_modules/font-awesome/css/font-awesome";
 
 // Settings & Globals
-@import "settings/susy";
-@import "settings/globals";
-@import "vars/colors";
-@import "typography/font";
+@import "base/susy";
+@import "base/colors";
+@import "base/typography";
+@import "base/styles";
 
 // only for dev purposes
 body { background-color: $clPaper; }
