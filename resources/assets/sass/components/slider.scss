@@ -1,0 +1,81 @@
+/**
+ *
+ * slider - component
+ *
+ */
+
+// variables
+$sliderHeight: 600px;
+
+// component definition
+@include component(slider) {
+    position: relative;
+    height: $sliderHeight;
+    background-color: $clPrimary;
+
+    border-bottom-left-radius: 125px;
+    overflow: hidden;
+
+    z-index: 100;
+
+    @include part(headline) {
+        position: relative;
+        padding-top: ($sliderHeight - $navbarHeight) * 0.35;
+        @include container();
+
+        @include part(content) {
+            @include span(12);
+
+            h1, h2 { text-shadow: 0 0 8px rgba($clShadow, 0.8); }
+
+            h1 {
+                margin: 0;
+                padding: 24px;
+
+                @include text('condensed');
+                color: $clPaper;
+                font-size: 45px;
+                border-bottom: 2px solid $clPaper;
+            }
+
+            h2 {
+                @include text();
+                color: $clPaper;
+                font-size: 21px;
+                text-align: right;
+            }
+        }
+        
+    }
+
+    @include part(images) {
+        position: absolute;
+        top: 0; right: 0; bottom: 0; left: 0; 
+        overflow: hidden;
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+
+            li { 
+                display: block;
+                float: left;
+                height: $sliderHeight;
+                width: 100%; 
+                overflow: hidden;
+
+                img { 
+                    margin-top: -15%;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    @include part(filter) {
+        position: absolute;
+        top: 0; right: 0; bottom: 0; left: 0;
+        background-color: rgba($clPrimary, 0.6);
+    }
+}

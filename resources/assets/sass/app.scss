@@ -10,8 +10,9 @@
 @import "typography/font";
 
 // only for dev purposes
-body { background-color: $clPrimary; }
+body { background-color: $clPaper; }
 
 // components
 @import "components/navbar";
+@import "components/slider";
 
