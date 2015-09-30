@@ -9,9 +9,6 @@
 @import "base/typography";
 @import "base/styles";
 
-// only for dev purposes
-body { background-color: $clPaper; }
-
 // components
 @import "components/navbar";
 @import "components/slider";

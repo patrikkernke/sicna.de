@@ -11,7 +11,6 @@ $sliderHeight: 600px;
 @include component(slider) {
     position: relative;
     height: $sliderHeight;
-    background-color: $clPrimary;
 
     border-bottom-left-radius: 125px;
     overflow: hidden;
@@ -26,21 +25,21 @@ $sliderHeight: 600px;
         @include part(content) {
             @include span(12);
 
-            h1, h2 { text-shadow: 0 0 8px rgba($clShadow, 0.8); }
+            h1, h2 { text-shadow: 0 0 8px get-color('shadow'); }
 
             h1 {
                 margin: 0;
                 padding: 24px;
 
                 @include text('condensed');
-                color: $clPaper;
+                color: get-color('text-negative');
                 font-size: 45px;
-                border-bottom: 2px solid $clPaper;
+                border-bottom: 2px solid get-color('text-negative');
             }
 
             h2 {
                 @include text();
-                color: $clPaper;
+                color: get-color('text-negative');
                 font-size: 21px;
                 text-align: right;
             }
@@ -76,6 +75,6 @@ $sliderHeight: 600px;
     @include part(filter) {
         position: absolute;
         top: 0; right: 0; bottom: 0; left: 0;
-        background-color: get-color('primary');
+        background-color: get-color('primary', 'base', 'opacity-light');
     }
 }

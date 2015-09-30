@@ -1,51 +1,68 @@
 /**
  *
- * Global color-variables
+ * Global color-variables & getter functions
  *
  */
 
-
-// brand-colors
-$clPrimary:         rgb(217, 0, 17); 
-$clSecondary:       rgb(96, 96, 96); 
-$clSecondaryDark:   rgb(48, 48, 48); 
-$clSecondaryLight:  rgb(220, 220, 220); 
-
-// app-colors
-$clPaper:           rgb(255, 255, 255);
-$clNeutral:         $clSecondaryLight;
-$clShadow:          #111;
-
-
-// text-colors
-$clText:            $clSecondaryDark;
-$clTextNegative:    $clPaper;
-
+// color-scheme
 $sicna-colors: (
-    'primary': rgb(217, 0, 17),
-    'secondary': rgb(96, 96, 96),
-    'foreground': rgb(220, 220, 220),
-    'background': rgb(255, 255, 255),
-    'shadow': rgb(0, 0, 0),
-    'text': rgb(48, 48, 48),
-    'text-negative': rgb(0, 0, 0),
+    'primary':          rgb(217, 0, 17),
+    'secondary':        rgb(96, 96, 96),
+    'foreground':       rgb(220, 220, 220),
+    'background':       rgb(255, 255, 255),
+    'shadow':           rgb(0, 0, 0),
+    'text':             rgb(48, 48, 48),
+    'text-negative':    rgb(255, 255, 255),
 );
 
-// getter for sicna-colors
-$color-interval: 10% !global;
+// app-colors
+$app-colors: $sicna-colors;
 
-@function get-color($key: 'primary', $level: 0)
+// color tints & shades
+$app-color-variants: (
+    'base':     0%,
+    'dark':     -25%,
+    'darker':   -50%,
+    'darkest':  -75%,
+    'light':    25%,
+    'lighter':  50%,
+    'lightest': 75%,
+);
+
+// opacities
+$app-opacities: (
+    'opacity-light':    0.7, // opacity used with lighter colors
+    'opacity-dark':     0.4, // opacity used with darker colors
+);
+
+@function get-color($name: 'primary', $variant: 'base', $opacity: 1)
 {
-    $color: map-get($sicna-colors, $key);
-    
-    $color-base: white;
+    $color: null;
 
-    @if ($level < 0) {
-        $color-base: black;
-        $level: $level * -1;
+    // Get the color spectrum
+    $color: map-get($app-colors, $name);
+
+    // Get the color variant
+    @if $color {
+        $variant-value: map-get($app-color-variants, $variant);
+        $color-base: white; // base-color for tinting
+
+        @if ($variant-value < 0) {
+            $color-base: black; // base-color for shading
+            $variant-value: $variant-value * -1; // only positive numbers are allowed in the mix()-function
+        }
+
+        $color: mix($color-base, $color, $variant-value);
+
     }
 
-    @return mix($color-base, $color, $level * $color-interval);
+    // Get the alpha setting
+    $alpha: if(type-of($opacity) == 'number', $opacity, map-get($app-opacities, $opacity));
+  
+    // Set the alpha of the color
+    @if $alpha {
+        $color: rgba($color, $alpha);
+    } 
+
+    @return $color;
 }
-
-

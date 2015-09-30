@@ -12,7 +12,7 @@ $fontFamily: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $fontFamilyCondensed: "Open Sans Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 @mixin text($weight:"normal") {
-    color: $clText;
+    color: get-color('text');
     font-family: $fontFamily;
     font-size: 14px;
     line-height: 125%;

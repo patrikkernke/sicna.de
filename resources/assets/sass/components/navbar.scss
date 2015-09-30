@@ -30,7 +30,7 @@ $navSecondaryMenueHeight: $navbarHeight - 20px;
         height: $navbarHeight;
         padding: 18px ($navbarHeight/2 + 10px)  18px 20px;  
         
-        background-color: $clPaper;
+        background-color: get-color('background');
         border-bottom-right-radius: $navbarHeight;
     }
 
@@ -56,12 +56,12 @@ $navSecondaryMenueHeight: $navbarHeight - 20px;
                 margin-right: 5px;
                 padding: 12px 15px;
                 @include text("bold");    
-                color: $clTextNegative;
+                color: get-color('text-negative');
                 text-transform: uppercase;
                 letter-spacing: 1px;
 
                 &:hover {
-                    color: $clText;
+                    color: get-color('text');
                     text-decoration: none;
                 }
             }
@@ -76,7 +76,7 @@ $navSecondaryMenueHeight: $navbarHeight - 20px;
                 padding: 15px;
                 
                 list-style-type: none;
-                background-color: $clPaper;
+                background-color: get-color('background');
 
                 border-radius: 5px;
                 overflow: hidden;
@@ -84,7 +84,7 @@ $navSecondaryMenueHeight: $navbarHeight - 20px;
                 li { 
                     display: block;
                     clear: both; 
-                    border-bottom: 1px solid $clNeutral;
+                    border-bottom: 1px solid get-color('foreground');
                     width: 100%;
 
                     &:last-child { border-bottom: none; }
@@ -95,11 +95,11 @@ $navSecondaryMenueHeight: $navbarHeight - 20px;
                     width: 100%;
                     
                     @include text("bold");
-                    color: $clSecondary;
+                    color: get-color('secondary');
                     letter-spacing: 0px;
                     text-transform: none;
 
-                    &:hover { color: $clPrimary; }
+                    &:hover { color: get-color('primary'); }
                     .fa { margin-right: 6px; }
                 }
             }
@@ -123,8 +123,8 @@ $navSecondaryMenueHeight: $navbarHeight - 20px;
                 height: $navSecondaryMenueHeight;
                 width: $navSecondaryMenueHeight;
                 
-                color: $clPaper;
-                border: 2px solid $clPaper;
+                color: get-color('text-negative');
+                border: 2px solid get-color('background');
                 border-radius: $navSecondaryMenueHeight;
 
                 i {
@@ -133,8 +133,8 @@ $navSecondaryMenueHeight: $navbarHeight - 20px;
                 }
 
                 &:hover {
-                    color: $clPrimary;
-                    background-color: $clPaper;
+                    color: get-color('primary');
+                    background-color: get-color('background');
                 }
             }
         }
