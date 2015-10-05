@@ -5,14 +5,14 @@
  */
 
 // variables
-$sliderHeight: 600px;
+$sliderHeight: v-rhythm(85);
 
 // component definition
 @include component(slider) {
     position: relative;
     height: $sliderHeight;
 
-    border-bottom-left-radius: 125px;
+    border-bottom-left-radius: get-border-radius('module');
     overflow: hidden;
 
     z-index: 100;

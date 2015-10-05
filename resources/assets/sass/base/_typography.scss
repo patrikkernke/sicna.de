@@ -14,11 +14,9 @@ $fontFamilyCondensed: "Open Sans Condensed", "Helvetica Neue", Helvetica, Arial,
 @mixin text($weight:"normal") {
     color: get-color('text');
     font-family: $fontFamily;
-    font-size: 14px;
-    line-height: 125%;
     font-weight: 400;
     text-transform: normal;
-    font-smoothing:antialiased;
+    font-smoothing: antialiased;
 
     @if ($weight == "bold") {
         font-weight: 700    ;
@@ -28,4 +26,53 @@ $fontFamilyCondensed: "Open Sans Condensed", "Helvetica Neue", Helvetica, Arial,
         font-weight: 300;
     }
   
+}
+
+$base-font-size: v-rhythm(2);
+$base-line-height: 1.25 * $base-font-size;
+
+$type-settings: (
+    -1: (
+        font-size: $base-font-size * 0.75,
+        line-height: $base-line-height,
+    ),
+    0: (
+        font-size: $base-font-size,
+        line-height: $base-line-height,
+    ),
+    1: (
+        font-size: $base-font-size * 1.333,
+        line-height: $base-line-height * 2,
+    ),
+    2: (
+        font-size: $base-font-size * 1.778,
+        line-height: $base-line-height * 2,
+    ),
+    3: (
+        font-size: $base-font-size * 2.37,
+        line-height: $base-line-height * 3,
+    ),
+    4: (
+        font-size: $base-font-size * 3.157,
+        line-height: $base-line-height * 4,
+    ),
+);
+
+@function type-scale($level) {
+    @return map-get(
+                map-get($type-settings, $level), 
+                'font-size'
+            );
+}
+
+@function line-height($level) {
+    @return map-get(
+                map-get($type-settings, $level), 
+                'line-height'
+            );
+}
+
+@mixin type-setting($level) {
+    font-size: type-scale($level);
+    line-height: line-height($level);
 }

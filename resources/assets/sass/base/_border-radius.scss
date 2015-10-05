@@ -1,0 +1,21 @@
+/**
+ *
+ * Global border radius sizes
+ *
+ */
+
+$border-radius: (
+    'small' : 3px,
+    'normal': v-rhyhtm(1),
+    'big'   : v-rhythm(2),
+    'module' : v-rhythm(18), // size vor the corner of the modules / blocks
+);
+
+@function get-border-radius($size)
+{
+    @if (type-of($size) == 'number') {
+        @return v-rhythm(1) * $size;
+    }
+
+    @return map-get($border-radius, $size);
+}

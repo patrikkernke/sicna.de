@@ -11,8 +11,7 @@
 
     @include('partials.navigation')
 
-    <section class="slider">
-        
+    <section class="slider">        
         <div class="slider__images">
             <ul>
                 <li><img src="images/slides/slide-1.jpg" alt=""></li>
