@@ -2,6 +2,7 @@
 @import "node_modules/susy/sass/susy";
 @import "node_modules/csstyle/csstyle";
 @import "node_modules/font-awesome/css/font-awesome";
+@import "node_modules/breakpoint-sass/stylesheets/breakpoint";
 
 // Settings & Globals
 @import "base/susy";
@@ -10,6 +11,7 @@
 @import "base/border-radius";
 @import "base/typography";
 @import "base/styles";
+@import "base/breakpoints";
 
 // components
 @import "components/navbar";

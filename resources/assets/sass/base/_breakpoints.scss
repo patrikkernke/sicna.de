@@ -1,0 +1,46 @@
+/**
+ *
+ * Breakpoint variables
+ *
+ */
+
+$responsive-sizes: (
+    'imac': (
+        'start':    1440px,
+        'end':      3000px,
+    ),
+    'macbook': (
+        'start':    1280px,
+        'end':      1440px,
+    ),
+    'air': (
+        'start':    1024px,
+        'end':      1280px,
+    ),
+);
+
+// Getters Helpers - Private functions
+@function get-device($device) {
+    @return map-get($responsive-sizes, $device);
+}
+@function get-device-start($device) {
+    @return map-get(get-device($device), 'start');
+}
+@function get-device-end($device) {
+    @return map-get(get-device($device), 'end');
+}
+
+
+
+// Public functions
+@function bp-until($device) {
+    @return 0px get-device-end($device);
+}
+
+@function bp-only($device) {
+    @return get-device-start($device) get-device-end($device);
+}
+
+@function bp-room($first-device, $second-device: 'imac') {
+    @return get-device-start($first-device) get-device-end($second-device);
+}

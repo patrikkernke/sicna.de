@@ -29,18 +29,20 @@ $sliderHeight: v-rhythm(85);
 
             h1 {
                 margin: 0;
-                padding: 24px;
+                padding: v-rhythm(3);
 
                 @include text('condensed');
+                @include type-setting(4);
                 color: get-color('text-negative');
-                font-size: 45px;
                 border-bottom: 2px solid get-color('text-negative');
             }
 
             h2 {
+                margin: 0;
+                padding: v-rhythm(1) h-rhythm(2); 
                 @include text();
+                @include type-setting(1);
                 color: get-color('text-negative');
-                font-size: 21px;
                 text-align: right;
             }
         }
