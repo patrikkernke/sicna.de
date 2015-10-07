@@ -43,7 +43,7 @@ $app-opacities: (
     $color: map-get($app-colors, $name);
 
     // Get the color variant
-    @if $color {
+    @if ($color != null) {
         $variant-value: map-get($app-color-variants, $variant);
         $color-base: white; // base-color for tinting
 

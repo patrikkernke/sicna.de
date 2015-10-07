@@ -1,0 +1,11 @@
+/**
+ *
+ * Development helpers
+ *
+ */
+
+@mixin see($color: 'primary', $border-width: 0) {
+    background-color: get-color($color, 'base', 0.1);
+    border: $border-width solid get-color($color, 'base', 0.25);
+}
+

@@ -8,30 +8,14 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
 
-$fontFamily: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$fontFamilyCondensed: "Open Sans Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
-
-@mixin text($weight:"normal") {
-    color: get-color('text');
-    font-family: $fontFamily;
-    font-weight: 400;
-    text-transform: normal;
-    font-smoothing: antialiased;
-
-    @if ($weight == "bold") {
-        font-weight: 700    ;
-    }
-    @if ($weight == "condensed") {
-        font-family: $fontFamilyCondensed;
-        font-weight: 300;
-    }
-  
-}
+// typographic variables
 
 $base-font-size: v-rhythm(2);
 $base-line-height: 1.25 * $base-font-size;
+$fontFamily: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$fontFamilyCondensed: "Open Sans Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
-$type-settings: (
+$type-sizes: (
     -1: (
         font-size: $base-font-size * 0.75,
         line-height: $base-line-height,
@@ -58,21 +42,41 @@ $type-settings: (
     ),
 );
 
+// private functions
+
+@function get-type-size($level) {
+    @return map-get($type-sizes, $level);
+}
+
+// public functions
+
 @function type-scale($level) {
-    @return map-get(
-                map-get($type-settings, $level), 
-                'font-size'
-            );
+    @return map-get(get-type-size($level), 'font-size');
 }
 
 @function line-height($level) {
-    @return map-get(
-                map-get($type-settings, $level), 
-                'line-height'
-            );
+    @return map-get(get-type-size($level), 'line-height');
+}
+
+
+// type-mixins
+
+@mixin type-family($weight:"normal") {
+    font-family: $fontFamily;
+    font-weight: 400;
+
+    @if ($weight == "bold") {
+        font-weight: 700    ;
+    }
+    @if ($weight == "condensed") {
+        font-family: $fontFamilyCondensed;
+        font-weight: 300;
+    }
+  
 }
 
 @mixin type-setting($level) {
     font-size: type-scale($level);
     line-height: line-height($level);
 }
+

@@ -4,149 +4,93 @@
  *
  */
 
-// variables
-$navbarHeight: v-rhythm(10);
-$navSecondaryMenueHeight: $navbarHeight - v-rhythm(3);
+body { @include see('secondary') }
+
+// component variables
+$navbar-height: v-rhythm(10);
 
 // component
 @include component(navbar) {
-
+    // dev-styles
+    @include see('secondary');
+    
+    // structure
     position: absolute;
-    top: 0; right: 0; left: 0;
-    margin: 0;
-    height: $navbarHeight;
-    width: 100%;
-
-    border-radius: 0;
-    border: 0;
-
-    z-index: 1000;
+    top:0; left: 0; right: 0;
+    height: $navbar-height;
+    @include break();
+    
+    // parts of the navbar-component
     
     @include part(brand) {
-        display: block;
-        position: absolute;
-        top: 0; left: 0;
-        
-        padding: v-rhythm(2.5) h-rhythm(6) v-rhythm(2.5) h-rhythm(3);
-        height: $navbarHeight;
+        // structure
+        position: relative;
+        height: $navbar-height;
+        float: left;
+        padding-left: h-rhythm(3);
+        padding-right: h-rhythm(8);
 
+        // theme-styles
         background-color: get-color('background');
-        border-bottom-right-radius: $navbarHeight;
+        border-bottom-right-radius: $navbar-height;
+
+        // hack to vertical align image 
+        &:before {
+            content: ' ';
+            display: inline-block;
+            vertical-align: middle;
+            height: 100%;
+        }
+        img {
+            display: inline-block;
+            vertical-align: middle;
+        }
     }
 
-    @include part(nav-primary) {
-        @include container();
+    @include part(menue) {
+        // dev-styles
+        @include see();
 
-        @include part(menue) {
-            @include span(12);
+        // structure
+        position: relative;
+        float: left;
+        height: $navbar-height;
+        margin: 0;
+        padding: 0;
+        &>li { 
+            // structure
+            @include see();
+            display: inline-block;
+            position: relative;
+            vertical-align: middle;
+            line-height: $navbar-height;
+        }
 
-            @include breakpoint(bp-until('macbook')) {
-                @include span(8);
-                @include push(2);
+        // theme-styles
+        list-style-type: none;
+
+        // options of the menue-component
+        @include option(right) {
+            // structure
+            float: right;
+        }
+
+        // parts of the menue-component
+        
+        @include part(sub) {
+            // dev-styles
+            @include see();
+
+            // structure
+            position: absolute;
+            top: $navbar-height; left:0;
+            padding: 0;
+            &>li {
+                line-height: 125%;
             }
-            padding-top: v-rhythm(2);
-            list-style-type: none;
             
-            li { 
-                position: relative; 
-                float: left; 
-                &:hover .navbar__nav-primary__menue__submenue {
-                        display: block;
-                }
-            }
-
-            a {
-                display: block;
-                position: relative;
-                margin-right: h-rhythm(1);
-                padding: v-rhythm(2) h-rhythm(2);
-                
-                @include text("bold");    
-                @include type-setting(0);
-                color: get-color('text-negative');
-                text-transform: uppercase;
-                letter-spacing: 1px;
-
-                &:hover {
-                    color: get-color('text');
-                    text-decoration: none;
-                }
-            }
-
-            @include part(submenue) {
-                display: none;
-                position: absolute;
-                left: v-rhythm(2);
-
-                width: v-rhythm(30);
-                padding: v-rhythm(2);
-                
-                list-style-type: none;
-                background-color: get-color('background');
-
-                border-radius: 5px;
-                overflow: hidden;
-
-                li { 
-                    display: block;
-                    clear: both; 
-                    border-bottom: 1px solid get-color('foreground');
-                    width: 100%;
-
-                    &:last-child { border-bottom: none; }
-                }
-                a {
-                    display: inline-block;
-                    padding: v-rhythm(1) h-rhyhtm(2);
-                    width: 100%;
-                    
-                    @include text("bold");
-                    @include type-setting(0);
-                    color: get-color('secondary');
-                    letter-spacing: 0px;
-                    text-transform: none;
-
-                    &:hover { color: get-color('primary'); }
-                    .fa { margin-right: v-rhythm(1); }
-                }
-            }
-        }
-    }
-
-    @include part(nav-secondary) {
-        position: absolute;
-        top: 0; right: 0;
-        
-        height: $navbarHeight;
-        
-        @include part(menue) {
+            // theme-styles
             list-style-type: none;
-            padding: v-rhythm(2);
-
-            li { float: left; }
-
-            a {
-                display: block;
-                height: $navSecondaryMenueHeight;
-                width: $navSecondaryMenueHeight;
-                
-                color: get-color('text-negative');
-                border: 2px solid get-color('background');
-                border-radius: $navSecondaryMenueHeight;
-
-                i {
-                    padding: ($navSecondaryMenueHeight/4 - 3px) $navSecondaryMenueHeight/4;
-                    font-size: $navSecondaryMenueHeight/2;
-                }
-
-                &:hover {
-                    color: get-color('primary');
-                    background-color: get-color('background');
-                }
-            }
         }
-
     }
-
-
 }
