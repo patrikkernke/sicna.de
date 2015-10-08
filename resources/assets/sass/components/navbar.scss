@@ -64,6 +64,15 @@ $navbar-height: v-rhythm(10);
             position: relative;
             vertical-align: middle;
             line-height: $navbar-height;
+
+            a {
+                @include see('secondary');
+                // structure
+                display: inline-block;
+
+                // theme-styles
+            }
+
         }
 
         // theme-styles
