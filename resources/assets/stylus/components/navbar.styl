@@ -6,6 +6,7 @@
  
 body
     see()
+    line-height: normal
 
 // component-variables
 navbar_height = rhythm(12)
@@ -14,7 +15,6 @@ navbar_height = rhythm(12)
  
 // component-definition
 .Navbar
-    see()
     // structure
     z-index  : layer.navbar
     absolute : top left right
@@ -31,13 +31,12 @@ navbar_height = rhythm(12)
     float    : left
     padding-left  : rhythm(3)
     padding-right : rhythm(8)
-    vertical-align('img')
+    align-child-vertical('img')
     // theme styles
     background-color           : color.background
     border-bottom-right-radius : navbar_height
     
 .Navbar__menue
-    see()
     // structure
     position : relative
     float    : left
@@ -46,37 +45,70 @@ navbar_height = rhythm(12)
     padding  : 0 rhythm(5)
 
 .Navbar__menue > li
-    see()
     // structure
     display  : inline-block
     position : relative
     height   : navbar_height
 
-
 .Navbar__menue > li > a
-    see(green)
     // structure
     display : inline-block
-    height  : inherit
+    height  : navbar_height
     padding : 0 rhythm(2)
     vertical-align : middle
     
+    // theme-style
+    color: color.text_negative
+    type-family('bold')
+    type-size('small')
+    line-height: navbar_height
+    text-transform: uppercase
+    text-decoration: none
+    
+.Navbar__menue > li:hover > a
+    // theme-style
+    color: color.text
+    background-color: rgba(color.foreground, 0.75)    
+    
 .Navbar__menue__submenue
-    see(red)
     // structure
     display        : none; // only viewable by hovering
     absolute       : top navbar_height left
     padding-top    : rhythm(2)
     padding-bottom : rhythm(3)
+    overflow       : hidden
+    // theme-style
+    background-color : color.background
+    border-bottom-right-radius : (navbar_height / 2)
 
 // show submenue by hovering
 .Navbar__menue > li:hover .Navbar__menue__submenue
     display : block
     
+.Navbar__menue__submenue > li
+    // structure
+    display: block
+    height: rhythm(5)
+
 .Navbar__menue__submenue > li > a
     // structure
-    display : inline-block
-    padding : rhythm(1) rhythm(4)
+    display: inline-block
+    padding : 0 rhythm(5)
+    height: rhythm(5)
+    width: 100%
+    white-space: nowrap
+    // theme-style
+    color : color.text
+    type-family('bold')
+    type-size('small')
+    line-height: rhythm(5)
+    text-decoration: none
+    
+        
+.Navbar__menue__submenue > li > a:hover
+    // theme-style
+    color: color.primary
+    background-color: color.foreground
     
 
 

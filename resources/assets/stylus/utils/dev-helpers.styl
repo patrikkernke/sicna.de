@@ -8,13 +8,12 @@
 see(see_color = rgb(50,50,50))
     background-color: rgba(see_color, 0.1)
 
-vertical-align(child_element)
+align-child-vertical(child_element)
     &:before 
         content        : ' '
         display        : inline-block
         vertical-align : middle
         height         : 100%
-        
     {child_element} 
         display        : inline-block
         vertical-align : middle

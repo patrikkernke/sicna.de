@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/css/app.css">
 
 </head>
-<body id="csstyle">
+<body>
 
     @include('partials.navigation')
 
