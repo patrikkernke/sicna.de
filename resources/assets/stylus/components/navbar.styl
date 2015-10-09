@@ -51,6 +51,7 @@ navbar_height = rhythm(12)
     position : relative
     height   : navbar_height
 
+
 .Navbar__menue > li > a
     see(green)
     // structure
@@ -62,19 +63,24 @@ navbar_height = rhythm(12)
 .Navbar__menue__submenue
     see(red)
     // structure
-    absolute : top navbar_height left
-    padding-top: rhythm(2)
-    padding-bottom: rhythm(3)
+    display        : none; // only viewable by hovering
+    absolute       : top navbar_height left
+    padding-top    : rhythm(2)
+    padding-bottom : rhythm(3)
 
+// show submenue by hovering
+.Navbar__menue > li:hover .Navbar__menue__submenue
+    display : block
+    
 .Navbar__menue__submenue > li > a
     // structure
-    display: inline-block
-    padding: rhythm(1) rhythm(4)
+    display : inline-block
+    padding : rhythm(1) rhythm(4)
     
 
 
 // options
 .Navbar__menue.--right
     // structure
-    float: right
-    padding-right: rhythm(2)
+    float         : right
+    padding-right : rhythm(2)
