@@ -1,0 +1,80 @@
+/**
+ *
+ * Component Navbar
+ *
+ */
+ 
+body
+    see()
+
+// component-variables
+navbar_height = rhythm(12)
+
+
+ 
+// component-definition
+.Navbar
+    see()
+    // structure
+    absolute : top left right
+    height   : navbar_height
+    cleafix()
+  
+
+
+// component-childs
+.Navbar__brand
+    // structure
+    position : relative
+    height   : navbar_height
+    float    : left
+    padding-left  : rhythm(3)
+    padding-right : rhythm(8)
+    vertical-align('img')
+    // theme styles
+    background-color           : color.background
+    border-bottom-right-radius : navbar_height
+    
+.Navbar__menue
+    see()
+    // structure
+    position : relative
+    float    : left
+    height   : inherit
+    margin   : 0
+    padding  : 0 rhythm(5)
+
+.Navbar__menue > li
+    see()
+    // structure
+    display  : inline-block
+    position : relative
+    height   : navbar_height
+
+.Navbar__menue > li > a
+    see(green)
+    // structure
+    display : inline-block
+    height  : inherit
+    padding : 0 rhythm(2)
+    vertical-align : middle
+    
+.Navbar__menue__submenue
+    see(red)
+    // structure
+    absolute : top navbar_height left
+    padding-top: rhythm(2)
+    padding-bottom: rhythm(3)
+
+.Navbar__menue__submenue > li > a
+    // structure
+    display: inline-block
+    padding: rhythm(1) rhythm(4)
+    
+
+
+// options
+.Navbar__menue.--right
+    // structure
+    float: right
+    padding-right: rhythm(2)

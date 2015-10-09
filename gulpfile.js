@@ -1,5 +1,8 @@
 var elixir = require('laravel-elixir');
 
+require('laravel-elixir-stylus');
+var nib = require('nib');
+
 /*
  |--------------------------------------------------------------------------
  | Elixir Asset Management
@@ -12,7 +15,7 @@ var elixir = require('laravel-elixir');
  */
 
 elixir(function(mix) {
-    mix.sass('app.scss')
+    mix.stylus('app.styl', 'public/css', { use: nib()})
     .browserSync({ proxy: 'sicna.app'});
     mix.copy('node_modules/font-awesome/fonts', 'public/fonts');
 

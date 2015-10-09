@@ -1,13 +1,15 @@
 {
   "private": true,
   "devDependencies": {
-    "gulp": "^3.8.8"
+    "gulp": "^3.8.8",
+    "laravel-elixir-stylus": "^1.0.1"
   },
   "dependencies": {
     "breakpoint-sass": "^2.6.1",
     "csstyle": "^1.5.0",
     "font-awesome": "^4.4.0",
     "laravel-elixir": "^3.0.0",
+    "nib": "^1.1.0",
     "normalize.css": "^3.0.3",
     "susy": "^2.2.6"
   }
