@@ -10,11 +10,13 @@ clients_height = rhythm(15)
 /* component definition */
 .Clients
     // structure
+    position : relative
+    z-index  : layer.clients
     height   : clients_height
     overflow : hidden
     // theme-styles
     background-color : color.background
-    box-shadow : 0 0 10px rgba(color.shadow, 0.75)
+    box-shadow : 0 8px 15px color.shadow
 
 .Clients__client
     // structure
