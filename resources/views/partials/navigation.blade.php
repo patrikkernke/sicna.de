@@ -29,7 +29,7 @@
         </li> 
     </ul>
 
-    <ul class="Navbar__menue --right">
+    <ul class="Navbar__menue -right">
         <li>
             <a href="#">Formulare</i></a>
             <ul class="Navbar__menue__submenue">

@@ -58,17 +58,17 @@ navbar_height = rhythm(12)
     vertical-align : middle
     
     // theme-style
-    color: color.text_negative
+    color : color.text_negative
     type-family('bold')
     type-size('small')
-    line-height: navbar_height
-    text-transform: uppercase
-    text-decoration: none
+    line-height     : navbar_height
+    text-transform  : uppercase
+    text-decoration : none
     
 .Navbar__menue > li:hover > a
     // theme-style
-    color: color.text
-    background-color: rgba(color.foreground, 0.75)    
+    color : color.text
+    background-color : rgba(color.foreground, 0.75)    
     
 .Navbar__menue__submenue
     // structure
@@ -80,6 +80,7 @@ navbar_height = rhythm(12)
     // theme-style
     background-color : color.background
     border-bottom-right-radius : (navbar_height / 2)
+    box-shadow: 0 0 5px rgba(color.shadow, 0.5)
 
 // show submenue by hovering
 .Navbar__menue > li:hover .Navbar__menue__submenue
@@ -87,33 +88,41 @@ navbar_height = rhythm(12)
     
 .Navbar__menue__submenue > li
     // structure
-    display: block
-    height: rhythm(5)
+    display : block
+    height  : rhythm(5)
 
 .Navbar__menue__submenue > li > a
     // structure
-    display: inline-block
-    padding : 0 rhythm(5)
-    height: rhythm(5)
-    width: 100%
-    white-space: nowrap
+    display     : inline-block
+    padding     : 0 rhythm(5)
+    height      : rhythm(5)
+    width       : 100%
+    white-space : nowrap
     // theme-style
     color : color.text
     type-family('bold')
     type-size('small')
-    line-height: rhythm(5)
-    text-decoration: none
+    line-height     : rhythm(5)
+    text-decoration : none
     
         
 .Navbar__menue__submenue > li > a:hover
     // theme-style
-    color: color.primary
-    background-color: color.foreground
+    color : color.primary
+    background-color : color.foreground
     
 
 
 // options
-.Navbar__menue.--right
+.Navbar__menue.-right
     // structure
-    float         : right
+    float : right
     padding-right : rhythm(2)
+
+.Navbar__menue.-right .Navbar__menue__submenue
+    // structure
+    right : 0
+    left  : auto
+    // theme-styles
+    border-bottom-right-radius : 0
+    border-bottom-left-radius  : (navbar_height / 2)

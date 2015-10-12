@@ -1,0 +1,65 @@
+/**
+ *
+ * Slider component
+ *
+ */
+
+/* component variables */
+slider_height = rhythm(100)
+
+/* component definition */
+.Slider
+    // structure
+    position : relative
+    z-index  : layer.slider.body
+    height   : slider_height
+    width    : 100%;
+
+.Slider__images
+    // structure
+    z-index  : layer.slider.images
+    absolute : top right bottom left
+    overflow : hidden
+
+.Slider__images ul
+    // structure
+    absolute : top right bottom left
+
+.Slider__images ul li
+    // structure
+    absolute : top left
+    width    : 100%  
+
+.Slider__images ul li img 
+    // structure
+    width      : 100%
+    margin-top : -10%
+
+.Slider__filter
+    // structure
+    absolute : top right bottom left
+    // theme-style
+    background-color : rgba(color.primary, 0.7)
+
+.Slider__headline
+    // structure
+    position    : relative
+    z-index     : layer.slider.headline
+    lost-center : 960px
+    padding-top : rhythm(30)
+
+.Slider__headline h1
+    // structure
+    margin-bottom: rhythm(2)
+    padding-bottom: rhythm(3)
+    color : color.text_negative
+    type-family('condensed')
+    type-size(biggest)
+    // theme-style
+    border-bottom : 2px solid color.background
+
+.Slider__headline h2
+    color : color.text_negative
+    type-family('bold')
+    type-size()
+    text-align: right

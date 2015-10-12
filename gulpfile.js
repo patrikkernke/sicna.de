@@ -1,7 +1,9 @@
 var elixir = require('laravel-elixir');
-
-require('laravel-elixir-stylus');
+var postStylus = require('poststylus');
 var nib = require('nib');
+
+// Elixir Plug-Ins
+require('laravel-elixir-stylus');
 
 /*
  |--------------------------------------------------------------------------
@@ -15,7 +17,7 @@ var nib = require('nib');
  */
 
 elixir(function(mix) {
-    mix.stylus('app.styl', 'public/css', { use: nib()})
+    mix.stylus('app.styl', null, { use: [postStylus('lost'), nib()]})
     .browserSync({ proxy: 'sicna.app'});
     mix.copy('node_modules/font-awesome/fonts', 'public/fonts');
 
