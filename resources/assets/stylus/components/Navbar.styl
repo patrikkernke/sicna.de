@@ -1,0 +1,128 @@
+/**
+ *
+ * Component Navbar
+ *
+ */
+ 
+body
+    see()
+    line-height: normal
+
+// component-variables
+navbar_height = rhythm(12)
+
+
+ 
+// component-definition
+.Navbar
+    // structure
+    z-index  : layer.navbar
+    absolute : top left right
+    height   : navbar_height
+    cleafix()
+  
+
+
+// component-childs
+.Navbar__brand
+    // structure
+    position : relative
+    height   : navbar_height
+    float    : left
+    padding-left  : rhythm(3)
+    padding-right : rhythm(8)
+    align-child-vertical('img')
+    // theme styles
+    background-color           : color.background
+    border-bottom-right-radius : navbar_height
+    
+.Navbar__menue
+    // structure
+    position : relative
+    float    : left
+    height   : inherit
+    margin   : 0
+    padding  : 0 rhythm(5)
+
+.Navbar__menue > li
+    // structure
+    display  : inline-block
+    position : relative
+    height   : navbar_height
+
+.Navbar__menue > li > a
+    // structure
+    display : inline-block
+    height  : navbar_height
+    padding : 0 rhythm(2)
+    vertical-align : middle
+    
+    // theme-style
+    color : color.text_negative
+    type-family('bold')
+    type-size('small')
+    line-height     : navbar_height
+    text-transform  : uppercase
+    text-decoration : none
+    
+.Navbar__menue > li:hover > a
+    // theme-style
+    color : color.text
+    background-color : rgba(color.foreground, 0.75)    
+    
+.Navbar__menue__submenue
+    // structure
+    display        : none; // only viewable by hovering
+    absolute       : top navbar_height left
+    padding-top    : rhythm(2)
+    padding-bottom : rhythm(3)
+    overflow       : hidden
+    // theme-style
+    background-color : color.background
+    border-bottom-right-radius : (navbar_height / 2)
+    box-shadow: 0 0 5px rgba(color.shadow, 0.5)
+
+// show submenue by hovering
+.Navbar__menue > li:hover .Navbar__menue__submenue
+    display : block
+    
+.Navbar__menue__submenue > li
+    // structure
+    display : block
+    height  : rhythm(5)
+
+.Navbar__menue__submenue > li > a
+    // structure
+    display     : inline-block
+    padding     : 0 rhythm(5)
+    height      : rhythm(5)
+    width       : 100%
+    white-space : nowrap
+    // theme-style
+    color : color.text
+    type-family('bold')
+    type-size('small')
+    line-height     : rhythm(5)
+    text-decoration : none
+    
+        
+.Navbar__menue__submenue > li > a:hover
+    // theme-style
+    color : color.primary
+    background-color : color.foreground
+    
+
+
+// options
+.Navbar__menue.-right
+    // structure
+    float : right
+    padding-right : rhythm(2)
+
+.Navbar__menue.-right .Navbar__menue__submenue
+    // structure
+    right : 0
+    left  : auto
+    // theme-styles
+    border-bottom-right-radius : 0
+    border-bottom-left-radius  : (navbar_height / 2)
