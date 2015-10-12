@@ -1,6 +1,6 @@
 <section class="Clients">
     <div class="Clients__client">
-        <img src="/images/clients/client-logos_canyon.png">
+        <img src="/images/clients/client-logos_Canyon.png">
     </div>
     <div class="Clients__client">
         <img src="/images/clients/client-logos_IKEA.png">
