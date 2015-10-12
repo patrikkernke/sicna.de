@@ -1,0 +1,52 @@
+/**
+ *
+ * Footer component
+ *
+ */
+ 
+// component variables
+footer_height = rhythm(15)
+
+// component definition
+.Footer
+    // structure
+    height : footer_height
+    padding: 0 rhythm(3)
+    // theme-style
+    background-color : color.background
+
+.Footer__menue
+    // structure
+    position : relative
+    float    : left
+    height   : footer_height
+
+.Footer__menue > li
+    // structure
+    position : relative
+    display  : inline-block
+    height   : inherit
+
+.Footer__menue > li a
+    // structure
+    display: inline-block
+    height: footer_height
+    padding: 0 rhythm(2)
+    line-height: footer_height
+    align-child-vertical('img')
+    
+    // theme-style
+    color : color.secondary
+    type-family('bold')
+    type-size('small')
+    text-transform  : uppercase
+    text-decoration : none
+ 
+ .Footer__menue > li a:hover
+     color : color.primary
+     background-color : color.foreground   
+
+.Footer__menue.-right
+    // structure
+    float : right
+
