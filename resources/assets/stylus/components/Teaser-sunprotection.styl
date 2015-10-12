@@ -1,0 +1,78 @@
+/**
+ *
+ * Teaser-sunprotection component
+ *
+ */
+ 
+
+// component variables
+teaser-sunprotection_height = rhythm(50)
+
+// component definition
+.Teaser-sunprotection
+    // structure
+    height : teaser-sunprotection_height + rhythm(25)
+    // theme-style
+    background-color : color.secondary_dark
+
+.Teaser-sunprotection__splitter
+    // structure
+    absolute : top right bottom left
+
+.Teaser-sunprotection__splitter > a
+    // structure
+    position    : relative
+    display     : block
+    lost-column : 1/2 2 0px
+    overflow    : hidden
+
+.Teaser-sunprotection__splitter > a img
+    // structure
+    min-height : 100%
+    min-width  : 100%
+
+.Teaser-sunprotection__splitter > a .Button
+    // structure
+    display     : none
+    absolute    : top 50% left 50%
+    width       : rhythm(40)
+    margin-left : (@width / 2 * (-1))
+    margin-top  : rhythm(10)
+    text-align  : center
+    // theme-style
+    box-shadow  : 0 0 5px rgba(color.shadow, 0.75)
+
+.Teaser-sunprotection__splitter > a:hover .Button
+    display : block
+    
+.Teaser-sunprotection__splitter > a:hover img
+    opacity : 0.5
+
+.Teaser-sunprotection__body
+    // structure
+    absolute    : top rhythm(25) left 50%
+    width       : teaser-sunprotection_height
+    height      : teaser-sunprotection_height 
+    margin-left : (teaser-sunprotection_height / 2) * (-1)
+    padding-top : rhythm(19)
+    // theme-style
+    text-align       : center
+    border-radius    : (teaser-sunprotection_height / 2)
+    box-shadow       : 0 0 0 rhythm(5) rgba(color.secondary, 0.5)
+    background-color : color.secondary
+
+.Teaser-sunprotection__body h2
+    // theme-style
+    color: color.text_negative
+    type-family('bold')
+    type-size('big')
+
+.Teaser-sunprotection__body h3
+    // theme-style
+    color: color.text_negative
+    type-family()
+    type-size()
+
+
+    
+    

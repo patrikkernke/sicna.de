@@ -8,40 +8,15 @@
 
 /* component definition */
 .Teaser
-    // lost-utility : edit
     // structure
     position : relative
-    z-index  : layer.teaser._body
-    padding  : rhythm(50) 0 rhythm(15)
+    padding  : rhythm(10) 0 rhythm(15)
     overflow : hidden
     // theme-style
     border-bottom-left-radius : rhythm(25)
     box-shadow: 0 8px 15px color.shadow
-    background-color: color.secondary_dark
 
-.Teaser__body
+.Teaser.-overhead
     // structure
-    position : relative
-    lost-center : 960px
-    z-index : layer.teaser.body
-    text-align  : center
-
-.Teaser__body h2
-    // structure
-    margin-top    : rhythm(12)
-    margin-bottom : rhythm(8)
-    // theme-style
-    color : color.text_negative
-    type-family('bold')
-    type-size('big')
-
-.Teaser__body p
-    // structure
-    margin-bottom : rhythm(8)
-    // theme-style
-    color : color.text_negative
-    type-family()
-    font-size   : type.size.default
-    line-height : type.line_height.bigger
-    
-
+    margin-top: rhythm(25) * (-1)
+    padding-top: rhythm(25) + rhythm(10)

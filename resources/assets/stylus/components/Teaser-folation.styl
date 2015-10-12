@@ -1,0 +1,38 @@
+/**
+ *
+ * Teaser-folation component
+ *
+ */
+
+// component definition
+.Teaser-folation
+    // structure
+    z-index  : layer.teaser.folation._body
+    padding-top: rhythm(50)
+    // theme-style
+    background-color: color.secondary_dark
+
+.Teaser-folation__body
+    // structure
+    position : relative
+    lost-center : 960px
+    z-index : layer.teaser.folation.body
+    text-align  : center
+
+.Teaser-folation__body h2
+    // structure
+    margin-top    : rhythm(12)
+    margin-bottom : rhythm(8)
+    // theme-style
+    color : color.text_negative
+    type-family('bold')
+    type-size('big')
+
+.Teaser-folation__body p
+    // structure
+    margin-bottom : rhythm(8)
+    // theme-style
+    color : color.text_negative
+    type-family()
+    font-size   : type.size.default
+    line-height : type.line_height.bigger
