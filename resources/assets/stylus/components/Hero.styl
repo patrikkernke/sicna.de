@@ -1,0 +1,75 @@
+/**
+ *
+ * Hero component
+ *
+ */
+
+/* component variables */
+hero_height = rhythm(100)
+hero_caption_width = rhythm(140)
+
+/* component definition */
+.Hero
+    // structure
+    position : relative
+    z-index  : layer.hero._body
+    overflow : hidden
+
+.Hero__caption
+    // structure
+    absolute    : top left
+    z-index     : layer.hero.caption
+    width       : hero_caption_width
+    padding-top : navbar_height
+
+.Hero__caption:before
+    // structure
+    absolute : top right (rhythm(10) * (-1)) bottom left
+    z-index : (layer.hero.caption - 2)
+    content  : ''
+    // theme-style
+    background-color: rgba(color.primary, 0.5)
+    border-bottom-right-radius : rhythm(50)
+    box-shadow: 0 0 10px color.shadow
+
+.Hero__caption:after
+        // structure
+        absolute : top right bottom left
+        z-index : (layer.hero.caption - 1)
+        content  : ''
+        // theme-style
+        background-color: rgba(color.primary, 1)
+        border-bottom-right-radius : rhythm(50)
+
+.Hero__caption h1
+    // structure
+    position       : relative
+    z-index        : layer.hero.title
+    margin-left    : rhythm(52)
+    padding-top    : rhythm(3)
+    padding-bottom : rhythm(6)
+    // theme-style
+    color : color.text_negative
+    type-family(light)
+    type-size(bigger)
+
+.Hero__picture
+    position : relative
+    z-index : 20
+    width  : 100%
+    height : hero_height
+
+.Hero__picture img
+    min-width: 100%
+    min-height: 100%
+
+.Hero__filter
+    // structure
+    absolute : top right 50% bottom left
+    z-index: layer.hero.filter
+    background : linear-gradient(left, rgba(color.primary, 0.9), rgba(color.primary, 0))
+    
+    
+    
+    
+    

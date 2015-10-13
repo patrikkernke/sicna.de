@@ -1,0 +1,64 @@
+/**
+ *
+ * Benefits component
+ *
+ */
+
+/* component variables */
+
+/* component definition */
+.Benefits
+    // structure
+    position : relative
+    z-index  : layer.benefits._body
+    overflow : hidden
+    // theme-style
+    border-bottom-left-radius : rhythm(25)
+    box-shadow : 0 5px 10px color.shadow
+
+.Benefits__background
+    // structure
+    absolute : top right bottom left
+    z-index  : layer.benefits.background
+
+.Benefits__background__left
+    // structure
+    position         : relative
+    height           : 100%
+    lost-column      : 1/2 2 0px
+    background-color : color.secondary
+
+.Benefits__background__right
+    // structure
+    position         : relative
+    height           : 100%
+    lost-column      : 1/2 2 0px
+    background-color : color.primary
+    
+.Benefits__content
+    // structure
+    position    : relative
+    z-index     : layer.benefits.content
+    lost-center : 960px
+
+.Benefits__content div
+    // structure
+    padding : rhythm(8) 0 rhythm(8) rhythm(10)
+    lost-column: 1/2 2 0px
+    
+.Benefits__content div h4
+    // structure
+    margin-bottom : rhythm(2)
+    // theme-style
+    color : color.text_negative
+    type-family(bold)
+    type-size()
+
+.Benefits__content div ul
+    // theme-style
+    color : color.text_negative
+    type-family()
+    type-size(small)
+    line-height: type.line_height.default
+    
+    

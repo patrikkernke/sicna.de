@@ -1,0 +1,53 @@
+/**
+ *
+ * PictureWall component
+ *
+ */
+
+/* component variables */
+
+/* component definition */
+.PictureWall
+    // structure
+    margin-top     : (rhythm(25) * (-1))
+    padding-top    : (rhythm(25) + rhythm(15))
+    padding-bottom : rhythm(18)
+    text-align     : center
+    // theme-style
+    background-color : color.secondary_dark
+
+.PictureWall h3
+    // structure
+    margin-bottom : rhythm(8)
+    // theme-style
+    color : color.text_negative
+    type-family(bold)
+    type-size(big)
+    
+.PictureWall__thumbs
+    // structure
+    margin-bottom : rhythm(8)
+    lost-center : 960px
+
+.PictureWall__thumbs > li
+    // structure
+    lost-waffle: 1/5 5 2%
+
+.PictureWall__thumbs > li a
+    // structure
+    display    : inline-block
+    width      : rhythm(25)
+    height     : rhythm(25)
+    overflow   : hidden
+    text-align : center
+    // theme-style
+    opacity : 0.75
+    border-radius : rhythm(25)
+    box-shadow : 0 0 10px color.shadow
+    transition : all 0.1s ease-in
+
+.PictureWall__thumbs > li a:hover
+    // theme-style
+    opacity    : 1
+    box-shadow : 0 10px 20px color.shadow
+    
