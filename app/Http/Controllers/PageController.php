@@ -38,5 +38,15 @@ class PageController extends Controller
     {
         return view('pages.folation');
     }
+
+    /**
+     * Shows about us - page
+     * 
+     * @return Illuminate\Http\Response
+     */
+    public function aboutUs()
+    {
+        return view('pages.about-us');   
+    }
     
 }

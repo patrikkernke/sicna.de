@@ -10,7 +10,6 @@
             <ul class="Navbar__menue__submenue">
                 <li><a href="{{ route('product.folation') }}">Car-Design</a></li>
                 <li><a href="{{ route('product.folation') }}">Car-Wrapping</a></li>
-                <li><a href="#">Fahrzeugbeschriftung</a></li>
                 <li><a href="#">Lackschutz Fahrrad</a></li>
                 <li><a href="#">Lackschutz KFZ</a></li>
                 <li><a href="#">Sonnenschutz Gebäude</a></li>
@@ -18,7 +17,7 @@
                 <li><a href="{{ route('product.folation') }}">Werbebeschriftung</a></li>
             </ul>
         </li> 
-        <li><a href="#">Über uns</a></li> 
+        <li><a href="{{ route('page.aboutus') }}">Über uns</a></li> 
         <li>
             <a href="#">Kontakt</a>
             <ul class="Navbar__menue__submenue">

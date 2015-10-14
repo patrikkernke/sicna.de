@@ -26,6 +26,9 @@
     <li>10 Jahre Garantie</li>
 @stop
 
+@section('contact-maker.title', 'Unverbindliches Angebot?')
+@section('contact-maker.button.text', 'Fragen Sie uns')
+
 @section('picturewall.thumbs')
     @for($i = 1; $i <= 10; $i++)
     <li>
