@@ -27,7 +27,8 @@ class PageController extends Controller
      */
     public function sunprotection_cars()
     {
-        return view('pages.sunprotection-cars');
+        $ref_images = $this->getImages('sunprotection_cars');
+        return view('pages.sunprotection-cars', compact('ref_images'));
     }
 
     /**

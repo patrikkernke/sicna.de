@@ -1,7 +1,7 @@
 @extends('layouts.product')
 
 @section('hero.title', 'Styling & Wrapping')
-@section('hero.image-path', '/images/hero/sun-protection_car.jpg')
+@section('hero.image-path', '/images/hero/wrapping.jpg')
 
 @section('product.description')
 

@@ -1,7 +1,7 @@
 @extends('layouts.product')
 
 @section('hero.title', 'Sonnenschutz Fahrzeuge')
-@section('hero.image-path', '/images/hero/sun-protection_car.jpg')
+@section('hero.image-path', '/images/hero/sun-protection_cars.jpg')
 
 @section('product.description')
     
@@ -30,11 +30,5 @@
 @section('product.contact-maker.button.text', 'Fragen Sie uns')
 
 @section('product.pictures')
-    @for($i = 1; $i <= 10; $i++)
-    <li>
-        <a href="#">
-            <img src="/images/products/sun-protection_cars/thumb-{{ $i }}.jpg">
-        </a>
-    </li>
-    @endfor
+    @each('partials.gallery-item', $ref_images, 'image');
 @stop

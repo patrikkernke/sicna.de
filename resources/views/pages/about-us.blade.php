@@ -2,6 +2,7 @@
 
 @section('app.content')
     @include('layouts.partials.hero')
+    @include('layouts.partials.product.description')
 @stop
 
 @section('hero.title', 'Über uns')
