@@ -1,9 +1,9 @@
-@extends('layouts.product-default')
+@extends('layouts.product')
 
 @section('hero.title', 'Styling & Wrapping')
 @section('hero.image-path', '/images/hero/sun-protection_car.jpg')
 
-@section('product.content')
+@section('product.description')
 
     <div class="Product__picture">
         <img src="/images/products/wrapping_cars.jpg">
@@ -13,7 +13,7 @@
 
 @stop
 
-@section('benefits.client')
+@section('product.benefits.client')
     <li>Individualisierung über riesige Motivvielfalt</li>
     <li>Veredelung der Karosserie (z.B. matter Look)</li>
     <li>Lackschutz</li>
@@ -22,13 +22,13 @@
     <li>Jederzeit ablösbar</li>
 @stop
 
-@section('benefits.sicna')
+@section('product.benefits.sicna')
     <li>Markematerial</li>
     <li>Beratung aus 30 Jahren Materialerfahrung</li>
     <li>Haltbarkeit bis 8 Jahre (in Abhängigkeit von der Pflege)</li>
     <li>Garantie bis 5 Jahre (in Verbindung mit unserer Nanoversiegelung)</li>
 @stop
 
-@section('picturewall.thumbs')
+@section('product.pictures')
     @each('partials.gallery-item', $ref_images, 'image');
 @stop

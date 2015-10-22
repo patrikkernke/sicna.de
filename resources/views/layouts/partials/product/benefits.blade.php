@@ -7,13 +7,13 @@
         <div>
             <h4>Was haben Sie davon?</h4>
             <ul>
-                @yield('benefits.client', '<li>Kundenvorteile</li>')
+                @yield('product.benefits.client', '<li>Kundenvorteile</li>')
             </ul>
         </div>
         <div>
             <h4>Warum SICNA?</h4>
             <ul>
-                @yield('benefits.sicna', '<li>SICNA-Vorteile</li>')
+                @yield('product.benefits.sicna', '<li>SICNA-Vorteile</li>')
             </ul>
         </div>
     </div>

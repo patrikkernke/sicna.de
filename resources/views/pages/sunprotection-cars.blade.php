@@ -1,9 +1,9 @@
-@extends('layouts.product-default')
+@extends('layouts.product')
 
 @section('hero.title', 'Sonnenschutz Fahrzeuge')
 @section('hero.image-path', '/images/hero/sun-protection_car.jpg')
 
-@section('product.content')
+@section('product.description')
     
     <div class="Product__picture">
         <img src="/images/products/sun-protection_cars.jpg">
@@ -13,23 +13,23 @@
 
 @stop
 
-@section('benefits.client')
+@section('product.benefits.client')
     <li>Jederzeit ablösbar</li>
     <li>Sichtschutz für Wertsachen & Ladung</li>
     <li>Schutz vor UV-Strahlung</li>
     <li>Verminderte Aufheizung durch Sonne</li>
 @stop
 
-@section('benefits.sicna')
+@section('product.benefits.sicna')
     <li>UV-beständiges Markematerial</li>
     <li>Beratung aus 30 Jahren Materialerfahrung</li>
     <li>10 Jahre Garantie</li>
 @stop
 
-@section('contact-maker.title', 'Unverbindliches Angebot?')
-@section('contact-maker.button.text', 'Fragen Sie uns')
+@section('product.contact-maker.title', 'Unverbindliches Angebot?')
+@section('product.contact-maker.button.text', 'Fragen Sie uns')
 
-@section('picturewall.thumbs')
+@section('product.pictures')
     @for($i = 1; $i <= 10; $i++)
     <li>
         <a href="#">

@@ -1,9 +1,9 @@
-@extends('layouts.product-default')
+@extends('layouts.product')
 
 @section('hero.title', 'Werbebeschriftung')
 @section('hero.image-path', '/images/hero/sun-protection_car.jpg')
 
-@section('product.content')
+@section('product.description')
     
     <div class="Product__picture">
         <img src="/images/products/folation_cars.jpg">
@@ -13,14 +13,14 @@
     
 @stop
 
-@section('benefits.client')
+@section('product.benefits.client')
     <li>Werbung / Präsenz</li>
     <li>Ergänzung bestehender Werbemittel</li>
     <li>Ganzheitlicher Markenauftritt</li>
     <li>Einheitlicher, erkennbarer Fuhrpark</li>
 @stop
 
-@section('benefits.sicna')
+@section('product.benefits.sicna')
     <li>10 Jahre Garantie</li>
     <li>Markenmaterial</li>
     <li>Beratung aus 30 Jahren Materialerfahrung</li>
@@ -29,7 +29,7 @@
     <li>Vielfalt an Pantone / RAL-Farbfolien</li>
 @stop
 
-@section('picturewall.thumbs')
+@section('product.pictures')
     
     @each('partials.gallery-item', $ref_images, 'image');
 
