@@ -60,5 +60,17 @@
     type-family()
     type-size(small)
     line-height: type.line_height.default
+
+.Benefits__content div ul li
+    // structure
+    position : relative
+    margin-left : rhythm(4)
     
-    
+.Benefits__content div ul li:before
+    // structure
+    margin-left: rhythm(4) * (-1)
+    padding-right : rhythm(2)
+    display : inline-block
+    content: '\f058'
+    // theme-style
+    font-family : 'FontAwesome'

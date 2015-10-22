@@ -18,6 +18,8 @@ require('laravel-elixir-stylus');
 
 elixir(function(mix) {
     mix.styles('lightbox.css');
+    mix.styles('node_modules/font-awesome/css/font-awesome.css', 'public/css/font-awesome.css', './');
+
     mix.stylus('app.styl', 
                 null, 
                 { 
@@ -30,6 +32,7 @@ elixir(function(mix) {
         'vendor/lightbox.min.js'
     ], 'public/js/vendor.js');
 
-    mix.copy('resources/assets/js/vendor/lightbox.min.map', 'public/js/lightbox.min.map');
+    mix.copy('resources/assets/js/vendor/lightbox.min.map', 'public/js/lightbox.min.map')
+        .copy('node_modules/font-awesome/fonts', 'public/fonts')
 
 });
