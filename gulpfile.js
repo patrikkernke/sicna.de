@@ -17,8 +17,19 @@ require('laravel-elixir-stylus');
  */
 
 elixir(function(mix) {
-    mix.stylus('app.styl', null, { use: [postStylus('lost'), nib()]})
+    mix.styles('lightbox.css');
+    mix.stylus('app.styl', 
+                null, 
+                { 
+                    use: [postStylus('lost'), nib()]
+                })
     .browserSync({ proxy: 'sicna.app'});
-    mix.copy('node_modules/font-awesome/fonts', 'public/fonts');
+
+    mix.scripts([
+        'vendor/jquery.js',
+        'vendor/lightbox.min.js'
+    ], 'public/js/vendor.js');
+
+    mix.copy('resources/assets/js/vendor/lightbox.min.map', 'public/js/lightbox.min.map');
 
 });

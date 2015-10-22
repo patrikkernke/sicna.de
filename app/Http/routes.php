@@ -5,7 +5,12 @@ Route::get('ueber-uns/', [
     'uses' => 'PageController@aboutUs'
 ]);
 
-Route::get('car-styling-und-werbung', [
+Route::get('car-styling-und-wrapping', [
+    'as'   => 'product.wrapping',
+    'uses' => 'PageController@wrapping'
+]);
+
+Route::get('werbebeschriftung', [
     'as'   => 'product.folation',
     'uses' => 'PageController@folation'
 ]);

@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Http\Requests;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Storage;
 
 class PageController extends Controller
 {
@@ -20,7 +21,7 @@ class PageController extends Controller
     }
 
     /**
-     * Shows page sunprotection for cars
+     * Shows sun-protection page
      * 
      * @return Illuminate\Http\Response
      */
@@ -35,8 +36,20 @@ class PageController extends Controller
      * @return Illuminate\Http\Response
      */
     public function folation()
+    {   
+        $ref_images = $this->getImages('folation_cars');
+        return view('pages.folation', compact('ref_images'));
+    }
+
+    /**
+     * Shows style & wrapping page
+     * 
+     * @return Illuminate\Http\Response
+     */
+    public function wrapping()
     {
-        return view('pages.folation');
+        $ref_images = $this->getImages('wrapping_cars');
+        return view('pages.wrapping', compact('ref_images'));
     }
 
     /**
@@ -48,5 +61,46 @@ class PageController extends Controller
     {
         return view('pages.about-us');   
     }
+
+
+
+    protected function getImages($directory)
+    {
+        $thumbs   = $this->listImagesFromDirectory($directory . '_thumbs');
+        $originals = $this->listImagesFromDirectory($directory);
+
+        return $this->combineImageListCollections($originals, $thumbs);
+    }
+
+
+    protected function listImagesFromDirectory($directory)
+    {
+        $images = Storage::disk('product-images')->files($directory);
+        $images = collect($images);
+        $images = $images->filter(function($image) use ($directory) {
+            return ($image != $directory . '/.DS_Store');
+        });
+
+        return $images->flatten();
+    }
     
+
+    protected function combineImageListCollections($originals, $thumbs)
+    {
+        $collection_length = count($originals);
+        $collection_merged = collect([]);
+        $originals         = $originals->toArray();
+        $thumbs            = $thumbs->toArray();
+
+        for ($i=0; $i < $collection_length; $i++) { 
+
+            $collection_merged->push([
+                'original' => $originals[$i],
+                'thumb'    => $thumbs[$i]
+            ]);
+
+        }
+
+        return $collection_merged;
+    }
 }
