@@ -1,34 +1,39 @@
-@extends('layouts.product')
+@extends('layouts.app')
 
-@section('hero.title', 'Sonnenschutz Fahrzeuge')
-@section('hero.image-path', '/images/hero/sun-protection_cars.jpg')
-
-@section('product.description')
+@section('app.content')
     
-    <div class="Product__picture">
-        <img src="/images/products/sun-protection_cars.jpg">
-    </div>
-    
-    <p>SICNA Sonnenschutzfolien bieten weit mehr als einen "coolen Look": Sie halten den Fahrzeuginnenraum spürbar kühler und steigern den Fahrkomfort für kleine und große Passagiere. So bieten sie exzellenten <strong>Sonnenschutz für Mensch und Tier</strong>. Und je nach Tönungsgrad schützen sie vor neugierigen Blicken und werden dank ihrer Splitterschutzwirkung zum echten Einbruchshemmer.</p>
+    @include('partials.hero', [
+        'hero_title' => 'Sonnenschutz Fahrzeuge',
+        'hero_image' => 'sun-protection_cars'
+    ])
 
-@stop
+    <section class="Product">
+        <div class="Product__image">
+            <img src="/images/products/sun-protection_cars.jpg">
+        </div>
 
-@section('product.benefits.client')
-    <li>Jederzeit ablösbar</li>
-    <li>Sichtschutz für Wertsachen & Ladung</li>
-    <li>Schutz vor UV-Strahlung</li>
-    <li>Verminderte Aufheizung durch Sonne</li>
-@stop
+        <p>SICNA Sonnenschutzfolien bieten weit mehr als einen "coolen Look": Sie halten den Fahrzeuginnenraum spürbar kühler und steigern den Fahrkomfort für kleine und große Passagiere. So bieten sie exzellenten <strong>Sonnenschutz für Mensch und Tier</strong>. Und je nach Tönungsgrad schützen sie vor neugierigen Blicken und werden dank ihrer Splitterschutzwirkung zum echten Einbruchshemmer.</p>
+    </section>
 
-@section('product.benefits.sicna')
-    <li>UV-beständiges Markematerial</li>
-    <li>Beratung aus 30 Jahren Materialerfahrung</li>
-    <li>10 Jahre Garantie</li>
-@stop
+    @include('partials.contact-maker', [
+        'contact_maker_call'   => 'Unverbindliches Angebot?',
+        'contact_maker_button' => 'Fragen Sie uns'
+    ])
 
-@section('product.contact-maker.title', 'Unverbindliches Angebot?')
-@section('product.contact-maker.button.text', 'Fragen Sie uns')
+    @include('partials.benefits', [
+        'benefits_product' => [
+            'Jederzeit ablösbar',
+            'Sichtschutz für Wertsachen und Ladung',
+            'Schutz vor UV-Strahlung',
+            'Verminderte Aufheizung durch Sonne'
+        ],
+        'benefits_sicna' => [
+            'UV-beständiges Markenmaterial',
+            'Beratung aus 30 Jahren Materialerfahrung',
+            '10 Jahre Garantie'
+        ]
+    ])
 
-@section('product.pictures')
-    @each('partials.gallery-item', $ref_images, 'image');
-@stop
+    @include('partials.picture-wall', ['images' => $ref_images])
+
+@endsection
