@@ -1,0 +1,106 @@
+/**
+ *
+ * Formular component
+ *
+ */
+
+/* component variables */
+
+/* component definition */
+// .Formular
+//     // structure
+//     see()
+
+.Formular__category
+    // structure
+    margin-bottom : rhythm(5)
+
+.Formular__category header
+    // structure
+    margin-bottom : rhythm(3)
+    // theme-style
+    color : color.primary
+    type-family(light)
+    type-size(big)
+
+.Formular__group
+    // structure
+    margin       : rhythm(5) 0 
+    lost-utility : clearfix
+
+.Formular__group > .Formular__select
+.Formular__group > input
+    // structure
+    margin-right : rhythm(2)
+
+.Formular__group__part
+    // structure
+    float        : left
+    margin-right : rhythm(2)
+    
+.Formular label
+    // structure
+    display       : block
+    margin-bottom : rhythm(1)
+    // theme-style
+    color : color.text
+    type-family(bold)
+    type-size(small)
+
+.Formular input[type="text"]
+.Formular input[type="password"]
+    // structure
+    padding : rhythm(2) rhythm(3)
+    // theme-style
+    color : color.text
+    type-family()
+    type-size()
+    border-radius : rhythm(2)
+    border        : 2px solid color.background;
+    
+.Formular textarea
+    // structure
+    padding    : rhythm(2) rhythm(3)
+    min-width  : rhythm(100)
+    min-height : rhythm(50)
+    // theme-style
+    color : color.text
+    type-family()
+    type-size()
+    border-radius : rhythm(2)
+    border        : 2px solid color.background;
+
+.Formular input[type="text"]:focus
+.Formular input[type="password"]:focus
+.Formular textarea:focus
+    // theme-style
+    outline : color.secondary
+    border-color : darken(color.foreground, 10%)
+
+.Formular__select 
+    // structure
+    position : relative
+    display  : inline-block
+    cursor   : pointer
+
+.Formular__select:after
+    // structure
+    absolute : right rhythm(2) top rhythm(3)
+    content : ">"
+    pointer-events: none
+
+.Formular__select select
+    // structure
+    appearance : none
+    width      : auto
+    padding    : rhythm(2) rhythm(6) rhythm(2) rhythm(3)
+    cursor : pointer
+    // theme-style
+    color : color.text
+    type-family()
+    type-size()
+    border-radius : rhythm(2)
+    border        : 2px solid color.secondary
+    outline       : none
+    
+    

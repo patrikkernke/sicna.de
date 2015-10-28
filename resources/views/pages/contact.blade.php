@@ -16,42 +16,62 @@
     </section>
 
     <section class="Foreground">
+        <div class="Foreground__center">
+            <form class="Formular">
 
-        <form class="Formular">
+                <div class="Formular__category">
+                    
+                    <header>Für welche Produkte interessieren Sie sich?</header>
 
-            <div class="Formular__category">
-                
-                <header>Kontaktinformationen</header>
-                
-                <div class="Formular__group">
-                    <label>Ansprechpartner</label>
-                    <select>
-                        <option>Herr</option>
-                        <option>Frau</option>
-                    </select>
-                    <input type="text" placeholder="Vorname">
-                    <input type="text" placeholder="Nachname">
+                    <div class="Formular__group">
+                        <div class="Formular__checkbox">
+                            <input type="checkbox"><span></span>
+                        </div>
+                    </div>
+
                 </div>
 
+                <div class="Formular__category">
+                    
+                    <header>Kontaktinformationen</header>
+                    
+                    <div class="Formular__group">
+                        <label>Ansprechpartner</label>
+                        <div class="Formular__select">
+                            <select>
+                                <option>Herr</option>
+                                <option>Frau</option>
+                            </select>
+                        </div>
+                        <input type="text" placeholder="Vorname">
+                        <input type="text" placeholder="Nachname">
+                    </div>
+
+                    <div class="Formular__group">
+                        <div class="Formular__group__part">
+                            <label for="">Mailadresse</label>
+                            <input type="text" placeholder="ihre@adresse.de">
+                        </div>
+                        <div class="Formular__group__part">
+                            <label for="">Telefon</label>
+                            <input type="text" placeholder="Vorwahl / Rufnummer">
+                        </div>
+                    </div>
+
+                </div>   
+
+                <div class="Formular__category">
+                    <header>Ihre Nachricht an uns</header>
+                    <textarea placeholder="Welche Fragen haben Sie?"></textarea>
+                </div> 
+
                 <div class="Formular__group">
-                    <div class="Formular__group__part">
-                        <label for="">Mailadresse</label>
-                        <input type="text" placeholder="ihre@adresse.de">
-                    </div>
-                    <div class="Formular__group__part">
-                        <label for="">Telefon</label>
-                        <input type="text" placeholder="Vorwahl / Rufnummer">
-                    </div>
-                </div>
+                    <input type="submit" class="Button" value="Absenden">
+                </div>        
 
-            </div>   
+            </form>
 
-            <div class="Formular__category">
-                <header>Ihre Nachricht an uns</header>
-                <input type="textarea" placeholder="Welche Fragen haben Sie?">
-            </div>         
-
-        </form>
+        </div>
 
     </section>
 
