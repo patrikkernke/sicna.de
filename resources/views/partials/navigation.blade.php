@@ -1,7 +1,7 @@
 <nav class="Navbar">
     
     <div class="Navbar__brand">
-        <a href="{{ route('welcome') }}"><img src="/images/sicna-logo_nav.png" alt="SICNA.de Logo"></a>
+        <a href="{{ route('page.welcome') }}"><img src="/images/sicna-logo_nav.png" alt="SICNA.de Logo"></a>
     </div>
     
     <ul class="Navbar__menue">
@@ -9,18 +9,13 @@
             <a href="#">Dienstleistungen</a>
             <ul class="Navbar__menue__submenue">
                 <li><a href="{{ route('product.wrapping') }}">Cardesign / Wrapping</a></li>
-                <li><a href="{{ route('sunprotection.cars') }}">KFZ Sonnenschutz</a></li>
+                <li><a href="{{ route('product.sunprotection.cars') }}">KFZ Sonnenschutz</a></li>
                 <li><a href="{{ route('product.folation') }}">Werbebeschriftung</a></li>
             </ul>
         </li> 
         <li><a href="{{ route('page.aboutus') }}">Über uns</a></li> 
         <li>
-            <a href="#">Kontakt</a>
-            <ul class="Navbar__menue__submenue">
-                <li><a href="#">Anfrage</a></li>
-                <li><a href="#">Mail</a></li>
-                <li><a href="#">Telefon</a></li>
-            </ul>
+            <a href="{{ route('page.contact') }}">Kontakt</a>
         </li> 
     </ul>
 

@@ -8,7 +8,7 @@
 
 /* component definition */
 .Product
-    padding     : rhythm(25) 0 rhythm(10)
+    padding     : rhythm(25) 0 rhythm(25)
     lost-center : 960px
     text-align  : center
     
@@ -42,12 +42,22 @@
 .Product p
     // structure
     margin-top    : rhythm(8)
-    margin-bottom : rhythm(20)
     // theme-style
     color : color.text
     type-family()
     font-size   : type.size.default
     line-height : type.line_height.bigger
+
+.Product p.important
+    // structure
+    padding : rhythm(3) 0
+    // theme-style
+    color : color.primary
+    type-size(big)
+
+.Product p ~ p
+    // structure
+    margin : 0
 
 .Product p strong
     type-family(bold)

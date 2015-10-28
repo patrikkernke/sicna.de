@@ -21,6 +21,16 @@ class PageController extends Controller
     }
 
     /**
+     * Shows contact page
+     * 
+     * @return Illuminate\Http\Response
+     */
+    public function contact()
+    {
+        return view('pages.contact');
+    }
+
+    /**
      * Shows sun-protection page
      * 
      * @return Illuminate\Http\Response
