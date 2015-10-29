@@ -25,7 +25,16 @@
 
                     <div class="Formular__group">
                         <div class="Formular__checkbox">
-                            <input type="checkbox"><span></span>
+                            <input type="checkbox" id="wrapping" name="wrapping"><label for="wrapping">Car-Styling und Wrapping</label>
+                        </div>
+                        <div class="Formular__checkbox">
+                            <input type="checkbox" id="sunprotecting-cars" name="sunprotecting-cars"><label for="sunprotecting-cars">Sonnenschutz für Fahrzeuge</label>
+                        </div>
+                        <div class="Formular__checkbox">
+                            <input type="checkbox" id="folation" name="folation"><label for="folation">Werbebeschriftung</label>
+                        </div>
+                        <div class="Formular__checkbox">
+                            <input type="checkbox" id="other" name="other"><label for="other">Sonstiges</label>
                         </div>
                     </div>
 
