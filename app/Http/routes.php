@@ -1,6 +1,21 @@
 <?php
 
 
+/*----------  Authentication  ----------*/
+
+Route::get('login', [
+    'as' => 'auth.getLogin',
+    'uses' => 'Auth\AuthController@getLogin'
+]);
+
+Route::post('login', [
+    'as' => 'auth.postLogin',
+    'uses' => 'Auth\AuthController@postLogin'
+]);
+
+
+/*----------  Product-pages  ----------*/
+
 Route::get('car-styling-und-wrapping', [
     'as'   => 'product.wrapping',
     'uses' => 'PageController@wrapping'
@@ -15,6 +30,9 @@ Route::get('sonnenschutz/fahrzeuge', [
     'as'   => 'product.sunprotection.cars',
     'uses' => 'PageController@sunprotection_cars'
 ]);
+
+/*----------  Single-pages  ----------*/
+
 
 // aboutus page
 Route::get('ueber-uns/', [

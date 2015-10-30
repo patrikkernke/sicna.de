@@ -11,13 +11,7 @@
 </head>
 <body>
     
-    @include('partials.navigation')
-
-    @yield('app.content')
-
-    @include('partials.footer')
-
-    <script src="/js/vendor.js"></script>
+    @yield('app.content', 'Website-Inhalt')
     
 </body>
 </html>

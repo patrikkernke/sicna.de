@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.site')
 
-@section('app.content')
+@section('site.content')
     
     @include('partials.hero', [
         'hero_title' => 'Sonnenschutz Fahrzeuge',

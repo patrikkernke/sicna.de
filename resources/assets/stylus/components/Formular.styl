@@ -33,6 +33,11 @@
     // structure
     margin-right : rhythm(2)
 
+.Formular__group.-full > input
+    // structure
+    width : 100%
+    margin-right : 0
+    
 .Formular__group__part
     // structure
     float        : left
@@ -85,38 +90,40 @@
 
 .Formular__select:after
     // structure
-    absolute : top 2px right bottom 2px
-    padding : rhythm(3) rhythm(2)
-    content : "\f078"
-    color : color.secondary
-    font-family : FontAwesome
-    font-size : rhythm(2)
-    pointer-events: none
-    border-top-right-radius : rhythm(2)
+    absolute                   : top 2px right bottom 2px
+    padding                    : rhythm(3) rhythm(2)
+    content                    : "\f078"
+    pointer-events             : none
+    // theme-style
+    color                      : color.secondary
+    font-family                : FontAwesome
+    font-size                  : rhythm(2)
+    border-top-right-radius    : rhythm(2)
     border-bottom-right-radius : rhythm(2)
-    background-color : darken(color.foreground, 10%)
+    background-color           : darken(color.foreground, 10%)
 
 .Formular__select select
     // structure
     appearance : none
     width      : auto
     padding    : rhythm(2) rhythm(8) rhythm(2) rhythm(3)
-    cursor : pointer
+    cursor     : pointer
     // theme-style
     color : color.text
     type-family()
     type-size()
-    border-radius : rhythm(2)
-    border        : 2px solid color.background
-    outline       : none    
+    border-radius    : rhythm(2)
+    border           : 2px solid color.background
+    background-color : color.background
+    outline          : none  
 
 
 .Formular__checkbox label
     // structure
-    position : relative
-    display : inline-block
+    position     : relative
+    display      : inline-block
     padding-left : rhythm(5)
-    cursor : pointer
+    cursor       : pointer
     // theme-style
     type-family()
     type-size()
@@ -124,17 +131,17 @@
 .Formular__checkbox label:before
     // structure
     absolute : left top 4px
-    content : ' '
-    width : rhythm(3)
-    height : rhythm(3)
+    content  : ' '
+    width    : rhythm(3)
+    height   : rhythm(3)
     // theme-style
-    color : color.primary
-    font-family : Fontawesome
-    font-size : rhythm(3)
-    line-height : rhythm(2)
+    color            : color.primary
+    font-family      : Fontawesome
+    font-size        : rhythm(3)
+    line-height      : rhythm(2)
     background-color : color.background
-    border-radius : rhythm()
-    border : 2px solid lighten(color.secondary, 10%)
+    border-radius    : rhythm()
+    border           : 2px solid lighten(color.secondary, 10%)
 
 .Formular__checkbox input[type="checkbox"]:checked + label:before
     // structure
