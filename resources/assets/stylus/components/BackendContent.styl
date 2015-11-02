@@ -10,5 +10,38 @@
 .BackendContent
     // structure
     height : 100%
+    padding-left : sidebarWidth
     // theme-style
     background-color : color.foreground
+
+.BackendContent header
+    // structure
+    padding : rhythm(4) rhythm(10) rhythm(3) + 2px
+    // theme-style
+    color : color.primary
+    type-family(light)
+    type-size(big)
+    background-color : color.background
+
+.BackendContent__addbutton
+    // structure
+    absolute   : top right
+    width      : rhythm(10)
+    height     : rhythm(12) + 2px
+    text-align : center
+    // theme-style
+    color : color.text_negative
+    type-family(light)
+    type-size(big)
+    line-height      : rhythm(12) + 2px
+    text-decoration  : none
+    background-color : color.primary
+
+.BackendContent__addbutton:hover
+    // theme-style
+    background-color : lighten(color.primary, 15%)
+
+.BackendContent__wrapper
+    // structure
+    padding : rhythm(5) rhythm(10)
+    

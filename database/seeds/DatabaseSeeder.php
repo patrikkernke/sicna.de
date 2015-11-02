@@ -17,6 +17,9 @@ class DatabaseSeeder extends Seeder
         App\User::truncate();
         $this->call(UserTableSeeder::class);
 
+        App\Carcompany::truncate();
+        $this->call(CarcompanyTableSeeder::class);
+
         Model::reguard();
     }
 }
