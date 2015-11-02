@@ -1,7 +1,21 @@
 <?php
 
+/*----------  Backend-routes  ----------*/
+Route::group(['middleware' => 'auth'], function() {
+    
+    Route::get('basecamp', [
+        'as'   => 'basecamp',
+        'uses' => 'PageController@basecamp'
+    ]);
+
+});
 
 /*----------  Authentication  ----------*/
+
+Route::get('logout', [
+    'as' => 'auth.logout',
+    'uses' => 'Auth\AuthController@getLogout'
+]);
 
 Route::get('login', [
     'as' => 'auth.getLogin',
@@ -12,7 +26,6 @@ Route::post('login', [
     'as' => 'auth.postLogin',
     'uses' => 'Auth\AuthController@postLogin'
 ]);
-
 
 /*----------  Product-pages  ----------*/
 

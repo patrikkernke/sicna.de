@@ -1,0 +1,38 @@
+/**
+ *
+ * Sidebar component
+ *
+ */
+
+/* component variables */
+sidebarWidth = rhythm(15)
+
+/* component definition */
+.Sidebar
+    // structure
+    fixed       : top bottom left
+    padding-top : rhythm(2)
+    width       : sidebarWidth
+    // theme-style
+    background-color : color.secondary
+
+.Sidebar header
+    // structure
+    margin-bottom : rhythm(4)
+    text-align    : center
+    
+.Sidebar__user
+    // structure
+    height     : sidebarWidth
+    text-align : center
+
+.Sidebar__user header
+    // structure
+    display : inline-block
+    width   : 100%
+    padding : rhythm(2) 0
+    // theme-style
+    color : darken(color.secondary, 20%)
+    type-family(bold)
+    type-size(bigger)
+    background-color : lighten(color.secondary, 10%)

@@ -11,6 +11,9 @@
             
             <form class="Formular" action="{{ route('auth.postLogin') }}" method="POST">
                 {{ csrf_field() }}
+                @if (count($errors) > 0)
+                    <span class="error">Überprüfe bitte deine Angaben. Die Anmeldung ist fehlgeschlagen.</span>
+                @endif
                 
                 <div class="Formular__group -full">
                     <label for="email">Mailadresse</label>
@@ -30,4 +33,5 @@
 
         </section>
     </div>
+    homestea
 @stop

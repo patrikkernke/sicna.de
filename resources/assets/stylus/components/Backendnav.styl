@@ -1,0 +1,38 @@
+/**
+ *
+ * Backendnav component
+ *
+ */
+
+/* component variables */
+
+/* component definition */
+.Backendnav
+    // structure
+    margin : rhythm(5) 0
+
+.Backendnav ul
+    // structure
+    margin-bottom : rhythm(5)
+    
+.Backendnav ul>li>a
+    // structure
+    display    : block
+    padding    : rhythm(3) 0
+    text-align : center
+    // theme-style
+    color : lighten(color.secondary, 30%)
+    type-family(bold)
+    type-size(small)
+    text-transform  : uppercase
+    text-decoration : none
+    
+.Backendnav ul>li>a:hover 
+    // theme-style
+    color            : color.text_negative
+    background-color : darken(color.secondary, 15%)
+
+.Backendnav ul>li>a>.fa
+    // theme-style
+    font-size : rhythm(5)
+

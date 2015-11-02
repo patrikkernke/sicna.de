@@ -73,6 +73,11 @@ class PageController extends Controller
         return view('pages.about-us');   
     }
 
+    public function basecamp()
+    {
+        return view('basecamp.index');
+    }
+
 
 
     protected function getImages($directory)
