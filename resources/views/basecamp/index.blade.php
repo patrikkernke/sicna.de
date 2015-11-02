@@ -5,28 +5,26 @@
     <a href="#" class="BackendContent__addbutton"><i class="fa fa-plus"></i></a>
     
     <div class="BackendContent__wrapper">
-        <table class="Table">
-            <thead>
-                <tr>
-                    <td>Vorname</td>
-                    <td>Nachname</td>
-                    <td><i class="fa fa-envelope-o"></i></td>
-                    <td><i class="fa fa-shield"></i></td>
-                    <td><i class="fa fa-gear"></i></td>
-                </tr>
-            </thead>
-            <tbody>
+        <div class="Table">
+            <header class="Table__header">
+                <div>Vorname</div>
+                <div>Nachname</div>
+                <div><i class="fa fa-envelope-o"></i></div>
+                <div><i class="fa fa-shield"></i></div>
+                <div><i class="fa fa-gear"></i></div>
+            </header>
+            <div class="Table__content">
                 @foreach(App\User::all() as $user)
-                <tr>
-                    <td>{{ $user->firstname }}</td>
-                    <td>{{ $user->lastname }}</td>
-                    <td>{{ $user->email }}</td>
-                    <td>Rechte</td>
-                    <td>Menü</td>
-                </tr>
+                <div class="Table__content">
+                    <div>{{ $user->firstname }}</div>
+                    <div>{{ $user->lastname }}</div>
+                    <div>{{ $user->email }}</div>
+                    <div>Rechte</div>
+                    <div>Menü</div>
+                </div>
                 @endforeach
-            </tbody>
-        </table>
+            </div>
+        </div>
     </div>
     
 
