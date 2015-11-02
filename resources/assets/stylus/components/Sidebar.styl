@@ -15,10 +15,11 @@ sidebarWidth = rhythm(15)
     width       : sidebarWidth
     // theme-style
     background-color : color.secondary
+    box-shadow : 3px 0 3px lighten(color.shadow, 20%)
 
 .Sidebar header
     // structure
-    margin-bottom : rhythm(4)
+    margin-bottom : rhythm(2)
     text-align    : center
     
 .Sidebar__user
@@ -32,7 +33,9 @@ sidebarWidth = rhythm(15)
     width   : 100%
     padding : rhythm(2) 0
     // theme-style
-    color : darken(color.secondary, 20%)
+    color : darken(color.secondary, 35%)
     type-family(bold)
     type-size(bigger)
+    border-bottom    : 3px solid darken(color.secondary, 10%)
+    border-top       : 3px solid darken(color.secondary, 10%)
     background-color : lighten(color.secondary, 10%)
