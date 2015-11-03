@@ -31,5 +31,56 @@
             </div>
         </div>
     </div>
+
+    <section id="ModalCreateUser" class="Modal">
+        <header>Neuen Nutzer hinzufügen</header>
+        <div class="Modal__body">
+            <form class="Formular" action="" method="POST">
+                {{ csrf_field() }}
+
+                <div class="Formular__group">
+                    <div class="Formular__group__part">
+                        <label for="firstname">Vorname</label>
+                        <input type="text" name="firstname" placeholder="Dein Vorname">
+                    </div>
+                    <div class="Formular__group_part">
+                        <label for="lastname">Nachname</label>
+                        <input type="text" name="lastname" placeholder="Dein Nachname">
+                    </div>
+                </div>
+
+                <div class="Formular__group">
+                    <label for="email">Mailadresse</label>
+                    <input type="text" name="email" placeholder="deine@adresse.de">
+                </div>
+                
+                <div class="Formular__category">
+                    <header>Rechte</header>
+                    <div class="Formular__group">
+                        <div class="Formular__checkbox">
+                            <input type="checkbox" id="cb1" name="cb1">
+                            <label for="cb1">Nutzer verwalten</label>
+                        </div>
+                        <div class="Formular__checkbox">
+                            <input type="checkbox" id="cb2" name="cb2">
+                            <label for="cb2">Anfragen bearbeiten</label>
+                        </div>
+                        <div class="Formular__checkbox">
+                            <input type="checkbox" id="cb3" name="cb3">
+                            <label for="cb3">DB-Preislisten bearbeiten</label>
+                        </div>
+                        <div class="Formular__checkbox">
+                            <input type="checkbox" id="cb4" name="cb4">
+                            <label for="cb4">DB-Autos bearbeiten</label>
+                        </div>
+                    </div>
+                    <div class="Formular__group">
+                        <input type="submit" class="Button" value="Neu anlegen">
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </section>
     
 @stop
