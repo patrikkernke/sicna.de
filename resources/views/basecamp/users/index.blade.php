@@ -41,17 +41,17 @@
                 <div class="Formular__group">
                     <div class="Formular__group__part">
                         <label for="firstname">Vorname</label>
-                        <input type="text" name="firstname" placeholder="Dein Vorname">
+                        <input type="text" name="firstname" placeholder="Vorname">
                     </div>
                     <div class="Formular__group_part">
                         <label for="lastname">Nachname</label>
-                        <input type="text" name="lastname" placeholder="Dein Nachname">
+                        <input type="text" name="lastname" placeholder="Nachname">
                     </div>
                 </div>
 
                 <div class="Formular__group">
                     <label for="email">Mailadresse</label>
-                    <input type="text" name="email" placeholder="deine@adresse.de">
+                    <input type="text" name="email" placeholder="mail@adresse.de">
                 </div>
                 
                 <div class="Formular__category">

@@ -1,0 +1,37 @@
+/**
+ *
+ * Modal component
+ *
+ */
+
+/* component variables */
+
+/* component definition */
+.Modal
+    // structure
+    fixed       : top 0 left 50%
+    width       : rhythm(120)
+    z-index     : 100
+    margin-left : rhythm(-60)
+    overflow : hidden;
+    // theme-style
+    background-color : color.background
+    border-bottom-left-radius  : rhythm(5)
+    border-bottom-right-radius : rhythm(5)
+    box-shadow : 0 3px 6px lighten(color.shadow, 50%)
+
+.Modal > header
+    // structure
+    position : relative
+    padding  : rhythm(3) rhythm(8)
+    // theme-style
+    color : color.primary
+    type-family(light)
+    type-size(big)
+
+.Modal__body
+    // structure
+    position     : relative
+    padding      : rhythm(1) rhythm(8)
+    // theme-style
+    background-color : color.foreground
