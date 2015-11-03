@@ -7,3 +7,94 @@
 /* component variables */
 
 /* component definition */
+.Table
+    // structure
+    width : 100%
+
+.Table__header
+    // structure
+    lost-utility : clearfix
+    // theme-style
+    color : color.text
+    type-family(bold)
+    type-size(small)
+    line-height : rhythm(8)
+    text-transform : uppercase
+    background-color : darken(color.foreground, 10%)
+    border : 2px solid darken(color.foreground, 20%)
+
+.Table--4 .Table__header > div
+.Table--4 .Table__row > div
+    // structure
+    lost-column : 1/4
+
+.Table__content
+    // structure
+    padding : rhythm(2) 0
+
+.Table__row
+    // structure
+    lost-utility : clearfix
+    margin : rhythm(1) 0
+    // theme-style
+    color : color.text
+    type-family()
+    type-size(small)
+    line-height : rhythm(8)
+    background-color : lighten(color.foreground, 75%)
+    border-radius : rhythm(1)
+    box-shadow : 0 2px 3px darken(color.foreground, 20%)
+    
+    transition: all 0.2s ease
+
+.Table__row:hover
+    // theme-style
+    background-color : color.background
+    box-shadow : 0 6px 6px darken(color.foreground, 20%)
+
+.Table__header
+.Table__row
+    // structure
+    padding-left  : rhythm(3)
+    padding-right : rhythm(3)
+
+.Table__row strong
+    // theme-style
+    type-family(bold)
+
+.Table__rights
+    // theme-style
+    color : lighten(color.secondary, 50%)
+
+.Table__rights > i
+    // structure
+    margin-right : rhythm(1)
+
+.Table__rights > .has-right
+    // theme-style
+    color : color.primary
+
+.Table__menue
+    // structure
+    text-align : right
+
+.Table__menue > a
+    // structure
+    display : inline-block
+    padding : rhythm(1) rhythm(2)
+    // theme-style
+    color : lighten(color.secondary, 35%)
+    type-family(bold)
+    type-size(smaller)
+    border-radius : rhythm(1)
+    text-transform : uppercase
+    text-decoration : none
+
+.Table__menue > a:hover
+    // theme-style
+    color : color.primary
+    background-color : color.foreground
+ 
+    
+
+

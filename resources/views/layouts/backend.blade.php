@@ -8,12 +8,12 @@
         </header>
 
         <section class="Sidebar__user">
-            <header>PK</header>
+            <header>{{ Auth::user()->initials() }}</header>
         </section>
 
         <nav class="Backendnav">
             <ul>
-                <li><a href="#"><i class="fa fa-user"></i></a></li>
+                <li><a href="{{ route('basecamp.users.index') }}"><i class="fa fa-user"></i></a></li>
                 <li><a href="#"><i class="fa fa-car"></i></a></li>
                 <li><a href="#"><i class="fa fa-gear"></i></a></li>
             </ul>

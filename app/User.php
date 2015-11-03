@@ -36,4 +36,10 @@ class User extends Model implements AuthenticatableContract,
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
+
+
+    public function initials()
+    {
+        return substr($this->firstname, 0, 1) . substr($this->lastname, 0, 1);
+    }
 }

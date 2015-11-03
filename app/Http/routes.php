@@ -3,6 +3,11 @@
 /*----------  Backend-routes  ----------*/
 Route::group(['middleware' => 'auth'], function() {
     
+    Route::get('nutzer', [
+        'as'   => 'basecamp.users.index',
+        'uses' => 'UserController@index'
+    ]);
+
     Route::get('basecamp', [
         'as'   => 'basecamp',
         'uses' => 'PageController@basecamp'
