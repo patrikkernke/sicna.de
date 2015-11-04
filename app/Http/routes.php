@@ -1,5 +1,13 @@
 <?php
 
+/*----------  API-routes  ----------*/
+Route::group(['middleware' => 'auth'], function() {
+    
+    Route::post('api/user/create', 'UserController@store');
+    Route::get('api/users/all', 'UserController@getAllUsers');
+
+});
+
 /*----------  Backend-routes  ----------*/
 Route::group(['middleware' => 'auth'], function() {
     

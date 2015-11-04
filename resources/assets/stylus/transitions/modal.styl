@@ -1,0 +1,19 @@
+/**
+ *
+ * modal-transition 
+ *
+ */
+
+/* always present */
+.modal-transition {
+  top : 0;
+  transition: all .3s ease;
+  opacity : 100
+}
+
+/* .modal-enter defines the starting state for entering */
+/* .modal-leave defines the ending state for leaving */
+.modal-enter, .modal-leave {
+  top : -500px;
+  opacity : 0
+}

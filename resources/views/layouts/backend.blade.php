@@ -23,7 +23,9 @@
         </nav>
     </section>
     
-    <section class="BackendContent">
+    <section class="BackendContent" id="@yield('backend.vue.id','NONE')">
         @yield('backend.content')
     </section>
+
+    <script src="/js/app.js"></script>
 @stop

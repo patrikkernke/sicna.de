@@ -2,6 +2,7 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
+    <meta id="token" name="token" value="{{ csrf_token() }}">
     <title>SICNA.de - Attraktive Folienlösungen (Beschriftung, Lackschutz, Sonnenschutz & Wrapping)</title>
 
     <link rel="stylesheet" href="/css/lightbox.css">

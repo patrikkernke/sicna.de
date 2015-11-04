@@ -20,6 +20,12 @@ class UserController extends Controller
         return view('basecamp.users.index', compact('users'));
     }
 
+
+    public function getAllUsers()
+    {
+        return User::orderBy('lastname')->get();
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -38,7 +44,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return 'Neuen Nutzer speichern!';
     }
 
     /**

@@ -10,15 +10,21 @@
 .Modal
     // structure
     fixed       : top 0 left 50%
-    width       : rhythm(120)
+    width       : rhythm(115)
     z-index     : 100
-    margin-left : rhythm(-60)
-    overflow : hidden;
+    margin-left : rhythm(-50)
     // theme-style
     background-color : color.background
     border-bottom-left-radius  : rhythm(5)
     border-bottom-right-radius : rhythm(5)
-    box-shadow : 0 3px 6px lighten(color.shadow, 50%)
+    box-shadow : 0 3px 6px lighten(color.shadow, 0)
+
+.Modal__desk
+    // structure
+    display  : block
+    fixed : top right bottom left
+    // theme-style
+    background-color : rgba(color.secondary, 0.75)
 
 .Modal > header
     // structure
@@ -28,6 +34,7 @@
     color : color.primary
     type-family(light)
     type-size(big)
+    background-color : color.background
 
 .Modal__body
     // structure
@@ -35,3 +42,5 @@
     padding      : rhythm(1) rhythm(8)
     // theme-style
     background-color : color.foreground
+    border-bottom-left-radius  : rhythm(5)
+    border-bottom-right-radius : rhythm(5)

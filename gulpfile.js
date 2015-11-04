@@ -27,6 +27,8 @@ elixir(function(mix) {
                 })
     .browserSync({ proxy: 'sicna.app'});
 
+    mix.browserify('app.js');
+
     mix.scripts([
         'vendor/jquery.js',
         'vendor/lightbox.min.js'
