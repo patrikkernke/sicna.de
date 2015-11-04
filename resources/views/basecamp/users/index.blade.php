@@ -7,43 +7,19 @@
     <a href="#" class="BackendContent__addbutton" v-on:click.prevent="showModalCreateUser()"><i class="fa fa-plus"></i></a>
     
     <div class="BackendContent__wrapper">
-        <div class="Table Table--4">
+        <div class="Table Table--3">
             <header class="Table__header">
                 <div>Name</div>
-                <div><i class="fa fa-envelope-o"></i></div>
-                <div><i class="fa fa-shield"></i></div>
+                <div>Mailadressen</i></div>
             </header>
-            {{-- <div class="Table__content">
-                @foreach($users as $user)
-                <div class="Table__row">
-                    <div><strong>{{ $user->lastname }},</strong> {{ $user->firstname}}</div>
-                    <div>{{ $user->email }}</div>
-                    <div class="Table__rights">
-                        <i class="fa fa-user"></i>
-                        <i class="fa fa-database has-right"></i>
-                        <i class="fa fa-sun-o"></i>
-                        <i class="fa fa-envelope"></i>
-                    </div>
-                    <div class="Table__menue">
-                        <a href="">Bearbeiten</a>
-                        <a href="">Löschen</a>
-                    </div>
-                </div>
-                @endforeach
-            </div> --}}
             <div class="Table__content">
-                <div class="Table__row" v-for="user in users">
+                <div class="Table__row" v-for="user in users | orderBy 'lastname'">
                     <div><strong>@{{ user.lastname }},</strong> @{{ user.firstname}}</div>
                     <div>@{{ user.email }}</div>
-                    <div class="Table__rights">
-                        <i class="fa fa-user"></i>
-                        <i class="fa fa-database has-right"></i>
-                        <i class="fa fa-sun-o"></i>
-                        <i class="fa fa-envelope"></i>
-                    </div>
                     <div class="Table__menue">
-                        <a href="">Bearbeiten</a>
-                        <a href="">Löschen</a>
+                        <a href="#" v-on:click.prevent="showModalNewPassword(user)">Neues Passwort</a>
+                        <a href="#">Bearbeiten</a>
+                        <a href="#" v-on:click.prevent="deleteUser(user, $index)">Löschen</a>
                     </div>
                 </div>
             </div>
@@ -55,6 +31,7 @@
         <header>Neuen Nutzer hinzufügen</header>
         <div class="Modal__body">
             <form class="Formular" action="" method="POST">
+                
                 <div class="Formular__group">
                     <div class="Formular__group__part">
                         <label for="firstname">Vorname</label>
@@ -71,26 +48,29 @@
                     <input type="text" name="email" placeholder="mail@adresse.de" v-model="newUser.email">
                 </div>
                 
-                <div class="Formular__category">
-                    <header>Rechte</header>
-                    <div class="Formular__group">
-                        <div class="Formular__checkbox">
-                            <input type="checkbox" id="cb1" name="cb1" v-model="newUser.rights.configUsers">
-                            <label for="cb1">Nutzer verwalten</label>
-                        </div>
-                        <div class="Formular__checkbox">
-                            <input type="checkbox" id="cb3" name="cb3" v-model="newUser.rights.configPrices">
-                            <label for="cb3">DB-Preislisten bearbeiten</label>
-                        </div>
-                        <div class="Formular__checkbox">
-                            <input type="checkbox" id="cb4" name="cb4" v-model="newUser.rights.configCars">
-                            <label for="cb4">DB-Autos bearbeiten</label>
-                        </div>
-                    </div>
-                    <div class="Formular__group">
-                        <input type="submit" class="Button" value="Neu anlegen">
-                        <a href="#" class="Button Button--default" v-on:click.prevent="hideModalCreateUser()">Abbrechen</a>
-                    </div>
+    
+                <div class="Formular__group">
+                    <input type="submit" class="Button" value="Neu anlegen" v-on:click.prevent="createUser()">
+                    <a href="#" class="Button Button--default" v-on:click.prevent="hideModalCreateUser()">Abbrechen</a>
+                </div>
+
+            </form>
+        </div>
+    </section>
+
+    <section class="Modal" v-show="modalNewPassword.show" transition="modal">
+        <div class="Modal__desk"></div>
+        <header>Neues Passwort vergeben</header>
+        <div class="Modal__body">
+            <form class="Formular" action="" method="POST">
+                
+                <div class="Formular__group">
+                    <input type="text" name="password" placeholder="Streng geheim." v-model="newPassword">
+                </div>
+    
+                <div class="Formular__group">
+                    <input type="submit" class="Button" value="Speichern" v-on:click.prevent="createNewPassword(selectedUser)">
+                    <a href="#" class="Button Button--default" v-on:click.prevent="hideModalNewPassword()">Abbrechen</a>
                 </div>
 
             </form>

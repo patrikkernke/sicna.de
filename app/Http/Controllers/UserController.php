@@ -44,7 +44,14 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        return 'Neuen Nutzer speichern!';
+        $user = User::create([
+            'firstname' => $request->get('firstname'),
+            'lastname'  => $request->get('lastname'),
+            'email'     => $request->get('email'),
+            'password'  => bcrypt('SICNA')
+        ]);
+
+        return $user;
     }
 
     /**
@@ -81,6 +88,13 @@ class UserController extends Controller
         //
     }
 
+    public function changePassword(Request $request, $id)
+    {
+        $user = User::find($id);
+        $user->password = bcrypt($request->get('newPassword'));
+        $user->save();
+    }
+
     /**
      * Remove the specified resource from storage.
      *
@@ -89,6 +103,6 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        User::destroy($id);
     }
 }

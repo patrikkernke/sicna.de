@@ -3,6 +3,8 @@
 /*----------  API-routes  ----------*/
 Route::group(['middleware' => 'auth'], function() {
     
+    Route::put('api/user/password/{id}', 'UserController@changePassword');
+    Route::delete('api/user/delete/{id}', 'UserController@destroy');
     Route::post('api/user/create', 'UserController@store');
     Route::get('api/users/all', 'UserController@getAllUsers');
 
