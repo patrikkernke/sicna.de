@@ -9,20 +9,24 @@ var userManagerView = new Vue({
         this.getAllUsers();
     },
     data : {
-        'modalCreateUser' : {
-            show : false
+        modalCreateUser : {
+            show      : false,
+            firstname : null,
+            lastname  : null,
+            email     : null
         },
-        'modalNewPassword' : {
-            show : false
+        modalEditUser : {
+            show      : false,
+            firstname : null,
+            lastname  : null,
+            email     : null
         },
-        'users' : [],
-        'newUser' : {
-            'firstname' : null,
-            'lastname'  : null,
-            'email'     : null
+        modalNewPassword : {
+            show           : false,
+            password_value : null
         },
-        'selectedUser' : null,
-        'newPassword' : null
+        users : [],
+        selectedUser : null,
     },
     methods : {
         showModalCreateUser : function() {
@@ -32,28 +36,39 @@ var userManagerView = new Vue({
         hideModalCreateUser : function() {
             this.modalCreateUser.show = false;
         },
-        cleanUpNewUser : function() {
-            this.newUser.firstname = null;
-            this.newUser.lastname = null;
-            this.newUser.email = null;
-        },
-        showModalNewPassword : function(user) {
-            this.newPassword = null;
-            this.selectedUser = user;
-            this.modalNewPassword.show = true;
-        },
-        hideModalNewPassword : function() {
-            this.modalNewPassword.show = false;
-        },
-        getAllUsers : function() {
-            this.$http.get('/api/users/all', function(data, status, request) {
-                this.users = data;
-            });
-        },
         createUser : function() {
-            this.$http.post('api/user/create', this.newUser, function(data) {
+            var data = {
+                'firstname' : this.modalCreateUser.firstname,
+                'lastname'  : this.modalCreateUser.lastname,
+                'email'     : this.modalCreateUser.email
+            };
+
+            this.$http.post('api/user/create', data, function(data) {
                 this.users.push(data);
                 this.hideModalCreateUser();
+                this.cleanUpNewUser();
+            });
+        },
+        showModalEditUser : function(user) {
+            this.selectedUser = user;
+            this.modalEditUser.firstname = user.firstname;
+            this.modalEditUser.lastname = user.lastname;
+            this.modalEditUser.email = user.email;
+            this.modalEditUser.show = true;
+        },
+        hideModalEditUser : function() {
+            this.modalEditUser.show = false;
+        },
+        editUser : function() {
+            var data = {
+                'firstname' : this.modalEditUser.firstname,
+                'lastname'  : this.modalEditUser.lastname,
+                'email'     : this.modalEditUser.email
+            };
+
+            this.$http.put('api/user/edit/'+this.selectedUser.id, data, function(data) {
+                this.getAllUsers();
+                this.hideModalEditUser();
                 this.cleanUpNewUser();
             });
         },
@@ -62,15 +77,33 @@ var userManagerView = new Vue({
                 this.users.splice(index, 1);
             })
         },
+        getAllUsers : function() {
+            this.$http.get('/api/users/all', function(data, status, request) {
+                this.users = data;
+            });
+        },
+        cleanUpNewUser : function() {
+            this.modalCreateUser.firstname = null;
+            this.modalCreateUser.lastname = null;
+            this.modalCreateUser.email = null;
+        },
+        showModalNewPassword : function(user) {
+            this.modalNewPassword.password_value = null;
+            this.selectedUser = user;
+            this.modalNewPassword.show = true;
+        },
+        hideModalNewPassword : function() {
+            this.modalNewPassword.show = false;
+        },
         createNewPassword : function(user) {
             var data = {
-                'newPassword' : this.newPassword
+                'newPassword' : this.modalNewPassword.password_value
             };
 
             this.$http.put('api/user/password/'+user.id, data, function() {
                 this.hideModalNewPassword();
                 this.selectedUser = null;
-                this.newPassword = null;
+                this.modalNewPassword.password_value = null;
             });
         }
     }

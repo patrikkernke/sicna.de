@@ -4,7 +4,7 @@
 
 @section('backend.content')
     <header>Nutzerverwaltung</header>
-    <a href="#" class="BackendContent__addbutton" v-on:click.prevent="showModalCreateUser()"><i class="fa fa-plus"></i></a>
+    <a href="#" class="BackendContent__addbutton" @click.prevent="showModalCreateUser()"><i class="fa fa-plus"></i></a>
     
     <div class="BackendContent__wrapper">
         <div class="Table Table--3">
@@ -17,9 +17,9 @@
                     <div><strong>@{{ user.lastname }},</strong> @{{ user.firstname}}</div>
                     <div>@{{ user.email }}</div>
                     <div class="Table__menue">
-                        <a href="#" v-on:click.prevent="showModalNewPassword(user)">Neues Passwort</a>
-                        <a href="#">Bearbeiten</a>
-                        <a href="#" v-on:click.prevent="deleteUser(user, $index)">Löschen</a>
+                        <a href="#" @click.prevent="showModalNewPassword(user)">Neues Passwort</a>
+                        <a href="#" @click.prevent="showModalEditUser(user)">Bearbeiten</a>
+                        <a href="#" @click.prevent="deleteUser(user, $index)">Löschen</a>
                     </div>
                 </div>
             </div>
@@ -35,28 +35,58 @@
                 <div class="Formular__group">
                     <div class="Formular__group__part">
                         <label for="firstname">Vorname</label>
-                        <input type="text" name="firstname" placeholder="Vorname" v-model="newUser.firstname">
+                        <input type="text" name="firstname" placeholder="Vorname" v-model="modalCreateUser.firstname">
                     </div>
                     <div class="Formular__group_part">
                         <label for="lastname">Nachname</label>
-                        <input type="text" name="lastname" placeholder="Nachname" v-model="newUser.lastname">
+                        <input type="text" name="lastname" placeholder="Nachname" v-model="modalCreateUser.lastname">
                     </div>
                 </div>
 
                 <div class="Formular__group">
                     <label for="email">Mailadresse</label>
-                    <input type="text" name="email" placeholder="mail@adresse.de" v-model="newUser.email">
+                    <input type="text" name="email" placeholder="mail@adresse.de" v-model="modalCreateUser.email">
                 </div>
                 
     
                 <div class="Formular__group">
-                    <input type="submit" class="Button" value="Neu anlegen" v-on:click.prevent="createUser()">
-                    <a href="#" class="Button Button--default" v-on:click.prevent="hideModalCreateUser()">Abbrechen</a>
+                    <input type="submit" class="Button" value="Neu anlegen" @click.prevent="createUser()">
+                    <a href="#" class="Button Button--default" @click.prevent="hideModalCreateUser()">Abbrechen</a>
                 </div>
 
             </form>
         </div>
     </section>
+
+    <section class="Modal" v-show="modalEditUser.show" transition="modal">
+        <div class="Modal__desk"></div>
+        <header>Nutzer bearbeiten</header>
+        <div class="Modal__body">
+            <form class="Formular" action="" method="POST">
+                
+                <div class="Formular__group">
+                    <label for="firstname">Vorname</label>
+                    <input type="text" name="firstname" placeholder="Vorname" v-model="modalEditUser.firstname">
+                </div>
+                <div class="Formular__group">
+                    <label for="lastname">Nachname</label>
+                    <input type="text" name="lastname" placeholder="Nachname" v-model="modalEditUser.lastname">
+                </div>
+                <div class="Formular__group">
+                    <label for="email">Mailadresse</label>
+                    <input type="text" name="email" placeholder="mail@adresse.de" v-model="modalEditUser.email">
+                </div>
+                
+    
+                <div class="Formular__group">
+                    <input type="submit" class="Button" value="Änderungen speichern" @click.prevent="editUser()">
+                    <a href="#" class="Button Button--default" @click.prevent="hideModalEditUser()">Abbrechen</a>
+                </div>
+
+            </form>
+        </div>
+    </section>
+
 
     <section class="Modal" v-show="modalNewPassword.show" transition="modal">
         <div class="Modal__desk"></div>
@@ -65,12 +95,12 @@
             <form class="Formular" action="" method="POST">
                 
                 <div class="Formular__group">
-                    <input type="text" name="password" placeholder="Streng geheim." v-model="newPassword">
+                    <input type="text" name="password" placeholder="Streng geheim." v-model="modalNewPassword.password_value">
                 </div>
     
                 <div class="Formular__group">
-                    <input type="submit" class="Button" value="Speichern" v-on:click.prevent="createNewPassword(selectedUser)">
-                    <a href="#" class="Button Button--default" v-on:click.prevent="hideModalNewPassword()">Abbrechen</a>
+                    <input type="submit" class="Button" value="Speichern" @click.prevent="createNewPassword(selectedUser)">
+                    <a href="#" class="Button Button--default" @click.prevent="hideModalNewPassword()">Abbrechen</a>
                 </div>
 
             </form>
