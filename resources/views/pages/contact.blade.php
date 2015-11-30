@@ -8,11 +8,9 @@
     ])
 
     <section class="Product">
-        <p>Wir möchten Ihnen eine fachkompetente und umfassende Beratung zukommen lassen. Dazu bräuchten wir einige Details zur Anfrage. <strong>Bitte füllen Sie das untenstehende Formular aus.</strong> Ein Mitarbeiter meldet sich zeitnah bei Ihnen. Gerne können Sie uns auch in besonderen Fällen telefonisch unter</p>
+        <p><strong>Gerne beraten wir Sie!</strong></p>
+        <p>Dazu haben wir einige Detail-Fragen. Unsere Fragen und Platz für Ihre Antworten finden Sie im untenstehenden Formular. Ein Mitarbeiter meldet sich zeitnah. Sie erreichen uns telefonisch unter</p>
         <p class="important">+49 (0) 2630 - 84088</p>
-        <p>oder via E-Mail unter</p>
-        <p class="important">info@sicna.de</p>
-        <p>erreichen. </p>
     </section>
 
     <section class="Foreground">

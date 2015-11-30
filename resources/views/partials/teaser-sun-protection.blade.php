@@ -1,5 +1,5 @@
 
-<section class="Teaser Teaser-sunprotection -overhead -last">
+<section class="Teaser Teaser-sunprotection -overhead">
     <div class="Teaser-sunprotection__splitter">
        <a href="#">
            <img src="/images/teaser/sun-protection_building.jpg">

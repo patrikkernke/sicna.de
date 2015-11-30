@@ -13,7 +13,7 @@
             <img src="/images/products/folation_cars.jpg">
         </div>
 
-        <p>Fahrzeugwerbung kann einen wesentlichen Beitrag zum Aufbau von Marken und zur Erhöhung der Kaufbereitschaft leisten - vom Pkw über Lkw, Bus und Straßenbahn bis hin zu Sportboot oder Kreuzfahrschiff. Immer mehr Unternehmen nutzen diese für sie <strong>kostengünstige Werbemöglichkeit</strong>. Erstklassige Folienlösungen sind dabei entscheidend, um den Werbeauftritt auch perfekt umzusetzen. Die Beschriftung finden unter anderem Anwendung bei der <strong>Flottenbeschriftung, Busse & Strassenbahnen, Taxis, Züge und Boote</strong>.</p>
+        <p>Fahrzeugwerbung kann einen wesentlichen Beitrag zum Aufbau von Marken und zur Erhöhung der Kaufbereitschaft leisten. Immer mehr Unternehmen nutzen diese für sie <strong>kostengünstige Werbemöglichkeit</strong>. Erstklassige Folienlösungen sind dabei entscheidend, um den Werbeauftritt auch perfekt umzusetzen. Die Beschriftung finden unter anderem Anwendung bei der <strong>Flottenbeschriftung, Busse & Strassenbahnen, Taxis, Züge und Boote</strong>.</p>
 
     </section>
 

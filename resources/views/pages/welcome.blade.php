@@ -9,4 +9,8 @@
     @include('partials.teaser-folation')
     @include('partials.teaser-sun-protection')
     
+    @include('partials.teaser-protection')
+
+    @include('partials.teaser-bicycle')
+    
 @stop

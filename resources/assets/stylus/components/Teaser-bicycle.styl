@@ -1,0 +1,40 @@
+/**
+ *
+ * Teaser-bicycle component
+ *
+ */
+
+/* component variables */
+
+/* component definition */
+.Teaser-bicycle
+    // structure
+    z-index : layer.teaser.bicycle._body
+
+.Teaser-bicycle__description
+    // structure
+    position : relative
+    z-index : layer.teaser.bicycle.description
+    lost-center : 960px
+    // theme-style
+    color : color.text_negative
+    type-family(light)
+    type-size()
+
+.Teaser-bicycle__description > div
+    // structure
+    lost-column : 1/3
+
+.Teaser-bicycle__description h2
+    // structure
+    margin-bottom : rhythm(5)
+    // theme-style
+    type-family(bold)
+    type-size(big)
+
+.Teaser-bicycle__description p
+    // structure
+    margin-bottom : rhythm(7)
+    // theme-style
+    // color : darken(color.text_negative, 10%)
+    line-height : get-type-line-height(bigger)

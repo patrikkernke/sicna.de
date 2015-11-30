@@ -1,0 +1,22 @@
+/**
+ *
+ * Full-Image component
+ *
+ */
+
+/* component variables */
+
+/* component definition */
+.Full-Image
+    // structure
+    absolute : top right bottom left
+
+.Full-Image:before 
+    content : ""
+    absolute : top right bottom left
+    background: linear-gradient(left, rgba(color.primary, 0.6), rgba(color.primary, 0.3), rgba(color.primary, 0), rgba(color.primary, 0))
+
+.Full-Image img
+    // structure
+    width : 100%
+    min-height : 100%

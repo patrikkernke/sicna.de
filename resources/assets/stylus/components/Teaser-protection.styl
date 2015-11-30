@@ -1,0 +1,71 @@
+/**
+ *
+ * Teaser-protection component
+ *
+ */
+
+/* component variables */
+
+/* component definition */
+.Teaser-protection
+    // structure
+    z-index          : layer.teaser.protection._body
+    background-color : black
+    
+.Teaser-protection__hero
+    // structure
+    absolute   : top right bottom left
+    padding-top : rhythm(16)
+    z-index    : layer.teaser.protection.hero
+    text-align : center
+
+.Teaser-protection__hero img
+    // structure
+    width : 1000px
+
+.Teaser-protection__description
+    // structure
+    position    : relative
+    z-index     : layer.teaser.protection.description
+    padding-top : rhythm(40)
+    lost-center : 960px
+    // theme-style
+    text-align : center
+
+
+.Teaser-protection__description h2
+    // structure
+    position : relative
+    z-index : layer.teaser.protection.title.text
+    margin-bottom : rhythm(10)
+    // theme-style
+    color : color.text
+    type-family(condensed)
+    type-size(bigger)
+
+.Teaser-protection__description h2:before
+    // structure
+    content : ""
+    position : absolute
+    z-index : layer.teaser.protection.title.background
+    left : 50%
+    margin-left : rhythm(-60)
+    margin-top : rhythm(-2)
+    width : rhythm(120)
+    height : rhythm(11)
+    // theme-style
+    background-color : rgba(color.background, 0.9)
+    border-radius : rhythm(1)
+    transform : skewX(-30deg)
+
+.Teaser-protection__description p
+    // structure
+    margin-bottom : rhythm(10)
+    // theme-style
+    color : color.text_negative
+    type-family()
+    type-size()
+    line-height : get-type-line-height(bigger)
+    
+    
+    

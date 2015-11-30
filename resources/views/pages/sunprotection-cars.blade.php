@@ -25,7 +25,7 @@
             'Jederzeit ablösbar',
             'Sichtschutz für Wertsachen und Ladung',
             'Schutz vor UV-Strahlung',
-            'Verminderte Aufheizung durch Sonne'
+            'Geringere Aufheizung bei Sonneneinstrahlung'
         ],
         'benefits_sicna' => [
             'UV-beständiges Markenmaterial',
